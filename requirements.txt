@@ -1,0 +1,8 @@
+numpy
+scikit-image
+scikit-learn
+pandas
+matplotlib
+nba_api
+setuptools
+ydata-profiling

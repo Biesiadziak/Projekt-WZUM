@@ -1,0 +1,1481 @@
+Season,Team,Voting,Player,Position
+2023-24,1st,(V),Nikola Jokić ,C
+2023-24,1st,(V),Giannis Antetokounmpo ,F
+2023-24,1st,(V),Jayson Tatum ,F
+2023-24,1st,(V),Luka Dončić ,G
+2023-24,1st,(V),Shai Gilgeous-Alexander ,G
+2023-24,2nd,(V),Anthony Davis ,C
+2023-24,2nd,(V),Kevin Durant ,F
+2023-24,2nd,(V),Kawhi Leonard ,F
+2023-24,2nd,(V),Jalen Brunson ,G
+2023-24,2nd,(V),Anthony Edwards ,G
+2023-24,3rd,(V),LeBron James ,F
+2023-24,3rd,(V),Domantas Sabonis ,F
+2023-24,3rd,(V),Devin Booker ,G
+2023-24,3rd,(V),Stephen Curry ,G
+2023-24,3rd,(V),Tyrese Haliburton ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+2022-23,1st,(V),Joel Embiid ,C
+2022-23,1st,(V),Giannis Antetokounmpo ,F
+2022-23,1st,(V),Jayson Tatum ,F
+2022-23,1st,(V),Luka Dončić ,G
+2022-23,1st,(V),Shai Gilgeous-Alexander ,G
+2022-23,2nd,(V),Nikola Jokić ,C
+2022-23,2nd,(V),Jimmy Butler ,F
+2022-23,2nd,(V),Jaylen Brown ,F
+2022-23,2nd,(V),Donovan Mitchell ,G
+2022-23,2nd,(V),Stephen Curry ,G
+2022-23,3rd,(V),Domantas Sabonis ,C
+2022-23,3rd,(V),LeBron James ,F
+2022-23,3rd,(V),Julius Randle ,F
+2022-23,3rd,(V),De'Aaron Fox ,G
+2022-23,3rd,(V),Damian Lillard ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+2021-22,1st,(V),Nikola Jokić ,C
+2021-22,1st,(V),Giannis Antetokounmpo ,F
+2021-22,1st,(V),Jayson Tatum ,F
+2021-22,1st,(V),Luka Dončić ,G
+2021-22,1st,(V),Devin Booker ,G
+2021-22,2nd,(V),Joel Embiid ,C
+2021-22,2nd,(V),Kevin Durant ,F
+2021-22,2nd,(V),DeMar DeRozan ,F
+2021-22,2nd,(V),Ja Morant ,G
+2021-22,2nd,(V),Stephen Curry ,G
+2021-22,3rd,(V),Karl-Anthony Towns ,C
+2021-22,3rd,(V),LeBron James ,F
+2021-22,3rd,(V),Pascal Siakam ,F
+2021-22,3rd,(V),Chris Paul ,G
+2021-22,3rd,(V),Trae Young ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+2020-21,1st,(V),Nikola Jokić ,C
+2020-21,1st,(V),Giannis Antetokounmpo ,F
+2020-21,1st,(V),Kawhi Leonard ,F
+2020-21,1st,(V),Stephen Curry ,G
+2020-21,1st,(V),Luka Dončić ,G
+2020-21,2nd,(V),Joel Embiid ,C
+2020-21,2nd,(V),Julius Randle ,F
+2020-21,2nd,(V),LeBron James ,F
+2020-21,2nd,(V),Chris Paul ,G
+2020-21,2nd,(V),Damian Lillard ,G
+2020-21,3rd,(V),Rudy Gobert ,C
+2020-21,3rd,(V),Jimmy Butler ,F
+2020-21,3rd,(V),Paul George ,F
+2020-21,3rd,(V),Bradley Beal ,G
+2020-21,3rd,(V),Kyrie Irving ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+2019-20,1st,(V),Anthony Davis ,C
+2019-20,1st,(V),Giannis Antetokounmpo ,F
+2019-20,1st,(V),LeBron James ,F
+2019-20,1st,(V),James Harden ,G
+2019-20,1st,(V),Luka Dončić ,G
+2019-20,2nd,(V),Nikola Jokić ,C
+2019-20,2nd,(V),Kawhi Leonard ,F
+2019-20,2nd,(V),Pascal Siakam ,F
+2019-20,2nd,(V),Damian Lillard ,G
+2019-20,2nd,(V),Chris Paul ,G
+2019-20,3rd,(V),Rudy Gobert ,C
+2019-20,3rd,(V),Jayson Tatum ,F
+2019-20,3rd,(V),Jimmy Butler ,F
+2019-20,3rd,(V),Ben Simmons ,G
+2019-20,3rd,(V),Russell Westbrook ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+2018-19,1st,(V),Nikola Jokić ,C
+2018-19,1st,(V),Giannis Antetokounmpo ,F
+2018-19,1st,(V),Paul George ,F
+2018-19,1st,(V),James Harden ,G
+2018-19,1st,(V),Stephen Curry ,G
+2018-19,2nd,(V),Joel Embiid ,C
+2018-19,2nd,(V),Kevin Durant ,F
+2018-19,2nd,(V),Kawhi Leonard ,F
+2018-19,2nd,(V),Damian Lillard ,G
+2018-19,2nd,(V),Kyrie Irving ,G
+2018-19,3rd,(V),Rudy Gobert ,C
+2018-19,3rd,(V),LeBron James ,F
+2018-19,3rd,(V),Blake Griffin ,F
+2018-19,3rd,(V),Kemba Walker ,G
+2018-19,3rd,(V),Russell Westbrook ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+2017-18,1st,(V),Anthony Davis ,C
+2017-18,1st,(V),LeBron James ,F
+2017-18,1st,(V),Kevin Durant ,F
+2017-18,1st,(V),Damian Lillard ,G
+2017-18,1st,(V),James Harden ,G
+2017-18,2nd,(V),Joel Embiid ,C
+2017-18,2nd,(V),Giannis Antetokounmpo ,F
+2017-18,2nd,(V),LaMarcus Aldridge ,F
+2017-18,2nd,(V),Russell Westbrook ,G
+2017-18,2nd,(V),DeMar DeRozan ,G
+2017-18,3rd,(V),Karl-Anthony Towns ,C
+2017-18,3rd,(V),Jimmy Butler ,F
+2017-18,3rd,(V),Paul George ,F
+2017-18,3rd,(V),Stephen Curry ,G
+2017-18,3rd,(V),Victor Oladipo ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+2016-17,1st,(V),Anthony Davis ,C
+2016-17,1st,(V),LeBron James ,F
+2016-17,1st,(V),Kawhi Leonard ,F
+2016-17,1st,(V),James Harden ,G
+2016-17,1st,(V),Russell Westbrook ,G
+2016-17,2nd,(V),Rudy Gobert ,C
+2016-17,2nd,(V),Giannis Antetokounmpo ,F
+2016-17,2nd,(V),Kevin Durant ,F
+2016-17,2nd,(V),Stephen Curry ,G
+2016-17,2nd,(V),Isaiah Thomas ,G
+2016-17,3rd,(V),DeAndre Jordan ,C
+2016-17,3rd,(V),Draymond Green ,F
+2016-17,3rd,(V),Jimmy Butler ,F
+2016-17,3rd,(V),John Wall ,G
+2016-17,3rd,(V),DeMar DeRozan ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+2015-16,1st,(V),DeAndre Jordan ,C
+2015-16,1st,(V),LeBron James ,F
+2015-16,1st,(V),Kawhi Leonard ,F
+2015-16,1st,(V),Stephen Curry ,G
+2015-16,1st,(V),Russell Westbrook ,G
+2015-16,2nd,(V),DeMarcus Cousins ,C
+2015-16,2nd,(V),Kevin Durant ,F
+2015-16,2nd,(V),Draymond Green ,F
+2015-16,2nd,(V),Chris Paul ,G
+2015-16,2nd,(V),Damian Lillard ,G
+2015-16,3rd,(V),Andre Drummond ,C
+2015-16,3rd,(V),Paul George ,F
+2015-16,3rd,(V),LaMarcus Aldridge ,F
+2015-16,3rd,(V),Klay Thompson ,G
+2015-16,3rd,(V),Kyle Lowry ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+2014-15,1st,(V),Marc Gasol ,C
+2014-15,1st,(V),LeBron James ,F
+2014-15,1st,(V),Anthony Davis ,F
+2014-15,1st,(V),Stephen Curry ,G
+2014-15,1st,(V),James Harden ,G
+2014-15,2nd,(V),DeMarcus Cousins ,C
+2014-15,2nd,(V),Pau Gasol ,C
+2014-15,2nd,(V),LaMarcus Aldridge ,F
+2014-15,2nd,(V),Russell Westbrook ,G
+2014-15,2nd,(V),Chris Paul ,G
+2014-15,3rd,(V),DeAndre Jordan ,C
+2014-15,3rd,(V),Blake Griffin ,F
+2014-15,3rd,(V),Tim Duncan ,F
+2014-15,3rd,(V),Klay Thompson ,G
+2014-15,3rd,(V),Kyrie Irving ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+2013-14,1st,(V),Joakim Noah ,C
+2013-14,1st,(V),Kevin Durant ,F
+2013-14,1st,(V),LeBron James ,F
+2013-14,1st,(V),James Harden ,G
+2013-14,1st,(V),Chris Paul ,G
+2013-14,2nd,(V),Dwight Howard ,C
+2013-14,2nd,(V),Blake Griffin ,F
+2013-14,2nd,(V),Kevin Love ,F
+2013-14,2nd,(V),Stephen Curry ,G
+2013-14,2nd,(V),Tony Parker ,G
+2013-14,3rd,(V),Al Jefferson ,C
+2013-14,3rd,(V),Paul George ,F
+2013-14,3rd,(V),LaMarcus Aldridge ,F
+2013-14,3rd,(V),Goran Dragić ,G
+2013-14,3rd,(V),Damian Lillard ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+2012-13,1st,(V),Tim Duncan ,C
+2012-13,1st,(V),Kevin Durant ,F
+2012-13,1st,(V),LeBron James ,F
+2012-13,1st,(V),Kobe Bryant ,G
+2012-13,1st,(V),Chris Paul ,G
+2012-13,2nd,(V),Marc Gasol ,C
+2012-13,2nd,(V),Carmelo Anthony ,F
+2012-13,2nd,(V),Blake Griffin ,F
+2012-13,2nd,(V),Tony Parker ,G
+2012-13,2nd,(V),Russell Westbrook ,G
+2012-13,3rd,(V),Dwight Howard ,C
+2012-13,3rd,(V),Paul George ,F
+2012-13,3rd,(V),David Lee ,F
+2012-13,3rd,(V),James Harden ,G
+2012-13,3rd,(V),Dwyane Wade ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+2011-12,1st,(V),Dwight Howard ,C
+2011-12,1st,(V),Kevin Durant ,F
+2011-12,1st,(V),LeBron James ,F
+2011-12,1st,(V),Kobe Bryant ,G
+2011-12,1st,(V),Chris Paul ,G
+2011-12,2nd,(V),Andrew Bynum ,C
+2011-12,2nd,(V),Blake Griffin ,F
+2011-12,2nd,(V),Kevin Love ,F
+2011-12,2nd,(V),Tony Parker ,G
+2011-12,2nd,(V),Russell Westbrook ,G
+2011-12,3rd,(V),Tyson Chandler ,C
+2011-12,3rd,(V),Carmelo Anthony ,F
+2011-12,3rd,(V),Dirk Nowitzki ,F
+2011-12,3rd,(V),Rajon Rondo ,G
+2011-12,3rd,(V),Dwyane Wade ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+2010-11,1st,(V),Dwight Howard ,C
+2010-11,1st,(V),Kevin Durant ,F
+2010-11,1st,(V),LeBron James ,F
+2010-11,1st,(V),Kobe Bryant ,G
+2010-11,1st,(V),Derrick Rose ,G
+2010-11,2nd,(V),Amar'e Stoudemire ,C
+2010-11,2nd,(V),Pau Gasol ,F
+2010-11,2nd,(V),Dirk Nowitzki ,F
+2010-11,2nd,(V),Dwyane Wade ,G
+2010-11,2nd,(V),Russell Westbrook ,G
+2010-11,3rd,(V),Al Horford ,C
+2010-11,3rd,(V),LaMarcus Aldridge ,F
+2010-11,3rd,(V),Zach Randolph ,F
+2010-11,3rd,(V),Manu Ginóbili ,G
+2010-11,3rd,(V),Chris Paul ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+2009-10,1st,(V),Dwight Howard ,C
+2009-10,1st,(V),Kevin Durant ,F
+2009-10,1st,(V),LeBron James ,F
+2009-10,1st,(V),Kobe Bryant ,G
+2009-10,1st,(V),Dwyane Wade ,G
+2009-10,2nd,(V),Amar'e Stoudemire ,C
+2009-10,2nd,(V),Carmelo Anthony ,F
+2009-10,2nd,(V),Dirk Nowitzki ,F
+2009-10,2nd,(V),Steve Nash ,G
+2009-10,2nd,(V),Deron Williams ,G
+2009-10,3rd,(V),Andrew Bogut ,C
+2009-10,3rd,(V),Tim Duncan ,F
+2009-10,3rd,(V),Pau Gasol ,F
+2009-10,3rd,(V),Joe Johnson ,G
+2009-10,3rd,(V),Brandon Roy ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+2008-09,1st,(V),Dwight Howard ,C
+2008-09,1st,(V),LeBron James ,F
+2008-09,1st,(V),Dirk Nowitzki ,F
+2008-09,1st,(V),Kobe Bryant ,G
+2008-09,1st,(V),Dwyane Wade ,G
+2008-09,2nd,(V),Yao Ming ,C
+2008-09,2nd,(V),Tim Duncan ,F
+2008-09,2nd,(V),Paul Pierce ,F
+2008-09,2nd,(V),Chris Paul ,G
+2008-09,2nd,(V),Brandon Roy ,G
+2008-09,3rd,(V),Shaquille O'Neal ,C
+2008-09,3rd,(V),Carmelo Anthony ,F
+2008-09,3rd,(V),Pau Gasol ,F
+2008-09,3rd,(V),Chauncey Billups ,G
+2008-09,3rd,(V),Tony Parker ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+2007-08,1st,(V),Dwight Howard ,C
+2007-08,1st,(V),Kevin Garnett ,F
+2007-08,1st,(V),LeBron James ,F
+2007-08,1st,(V),Kobe Bryant ,G
+2007-08,1st,(V),Chris Paul ,G
+2007-08,2nd,(V),Amar'e Stoudemire ,C
+2007-08,2nd,(V),Tim Duncan ,F
+2007-08,2nd,(V),Dirk Nowitzki ,F
+2007-08,2nd,(V),Steve Nash ,G
+2007-08,2nd,(V),Deron Williams ,G
+2007-08,3rd,(V),Yao Ming ,C
+2007-08,3rd,(V),Carlos Boozer ,F
+2007-08,3rd,(V),Paul Pierce ,F
+2007-08,3rd,(V),Manu Ginóbili ,G
+2007-08,3rd,(V),Tracy McGrady ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+2006-07,1st,(V),Amar'e Stoudemire ,C
+2006-07,1st,(V),Tim Duncan ,F
+2006-07,1st,(V),Dirk Nowitzki ,F
+2006-07,1st,(V),Kobe Bryant ,G
+2006-07,1st,(V),Steve Nash ,G
+2006-07,2nd,(V),Yao Ming ,C
+2006-07,2nd,(V),Chris Bosh ,F
+2006-07,2nd,(V),LeBron James ,F
+2006-07,2nd,(V),Gilbert Arenas ,G
+2006-07,2nd,(V),Tracy McGrady ,G
+2006-07,3rd,(V),Dwight Howard ,C
+2006-07,3rd,(V),Carmelo Anthony ,F
+2006-07,3rd,(V),Kevin Garnett ,F
+2006-07,3rd,(V),Chauncey Billups ,G
+2006-07,3rd,(V),Dwyane Wade ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+2005-06,1st,(V),Shaquille O'Neal ,C
+2005-06,1st,(V),LeBron James ,F
+2005-06,1st,(V),Dirk Nowitzki ,F
+2005-06,1st,(V),Kobe Bryant ,G
+2005-06,1st,(V),Steve Nash ,G
+2005-06,2nd,(V),Ben Wallace ,C
+2005-06,2nd,(V),Elton Brand ,F
+2005-06,2nd,(V),Tim Duncan ,F
+2005-06,2nd,(V),Chauncey Billups ,G
+2005-06,2nd,(V),Dwyane Wade ,G
+2005-06,3rd,(V),Yao Ming ,C
+2005-06,3rd,(V),Carmelo Anthony ,F
+2005-06,3rd,(V),Shawn Marion ,F
+2005-06,3rd,(V),Gilbert Arenas ,G
+2005-06,3rd,(V),Allen Iverson ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+2004-05,1st,(V),Shaquille O'Neal ,C
+2004-05,1st,(V),Tim Duncan ,F
+2004-05,1st,(V),Dirk Nowitzki ,F
+2004-05,1st,(V),Allen Iverson ,G
+2004-05,1st,(V),Steve Nash ,G
+2004-05,2nd,(V),Amar'e Stoudemire ,C
+2004-05,2nd,(V),Kevin Garnett ,F
+2004-05,2nd,(V),LeBron James ,F
+2004-05,2nd,(V),Ray Allen ,G
+2004-05,2nd,(V),Dwyane Wade ,G
+2004-05,3rd,(V),Ben Wallace ,C
+2004-05,3rd,(V),Shawn Marion ,F
+2004-05,3rd,(V),Tracy McGrady ,F
+2004-05,3rd,(V),Gilbert Arenas ,G
+2004-05,3rd,(V),Kobe Bryant ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+2003-04,1st,(V),Shaquille O'Neal ,C
+2003-04,1st,(V),Tim Duncan ,F
+2003-04,1st,(V),Kevin Garnett ,F
+2003-04,1st,(V),Kobe Bryant ,G
+2003-04,1st,(V),Jason Kidd ,G
+2003-04,2nd,(V),Ben Wallace ,C
+2003-04,2nd,(V),Jermaine O'Neal ,F
+2003-04,2nd,(V),Peja Stojaković ,F
+2003-04,2nd,(V),Sam Cassell ,G
+2003-04,2nd,(V),Tracy McGrady ,G
+2003-04,3rd,(V),Yao Ming ,C
+2003-04,3rd,(V),Metta World Peace ,F
+2003-04,3rd,(V),Dirk Nowitzki ,F
+2003-04,3rd,(V),Baron Davis ,G
+2003-04,3rd,(V),Michael Redd ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+2002-03,1st,(V),Shaquille O'Neal ,C
+2002-03,1st,(V),Tim Duncan ,F
+2002-03,1st,(V),Kevin Garnett ,F
+2002-03,1st,(V),Kobe Bryant ,G
+2002-03,1st,(V),Tracy McGrady ,G
+2002-03,2nd,(V),Ben Wallace ,C
+2002-03,2nd,(V),Dirk Nowitzki ,F
+2002-03,2nd,(V),Chris Webber ,F
+2002-03,2nd,(V),Allen Iverson ,G
+2002-03,2nd,(V),Jason Kidd ,G
+2002-03,3rd,(V),Jermaine O'Neal ,C
+2002-03,3rd,(V),Jamal Mashburn ,F
+2002-03,3rd,(V),Paul Pierce ,F
+2002-03,3rd,(V),Stephon Marbury ,G
+2002-03,3rd,(V),Steve Nash ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+2001-02,1st,(V),Shaquille O'Neal ,C
+2001-02,1st,(V),Tim Duncan ,F
+2001-02,1st,(V),Tracy McGrady ,F
+2001-02,1st,(V),Kobe Bryant ,G
+2001-02,1st,(V),Jason Kidd ,G
+2001-02,2nd,(V),Dirk Nowitzki ,C
+2001-02,2nd,(V),Kevin Garnett ,F
+2001-02,2nd,(V),Chris Webber ,F
+2001-02,2nd,(V),Allen Iverson ,G
+2001-02,2nd,(V),Gary Payton ,G
+2001-02,3rd,(V),Dikembe Mutombo ,C
+2001-02,3rd,(V),Jermaine O'Neal ,F
+2001-02,3rd,(V),Ben Wallace ,F
+2001-02,3rd,(V),Steve Nash ,G
+2001-02,3rd,(V),Paul Pierce ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+2000-01,1st,(V),Shaquille O'Neal ,C
+2000-01,1st,(V),Tim Duncan ,F
+2000-01,1st,(V),Chris Webber ,F
+2000-01,1st,(V),Allen Iverson ,G
+2000-01,1st,(V),Jason Kidd ,G
+2000-01,2nd,(V),Dikembe Mutombo ,C
+2000-01,2nd,(V),Vince Carter ,F
+2000-01,2nd,(V),Kevin Garnett ,F
+2000-01,2nd,(V),Kobe Bryant ,G
+2000-01,2nd,(V),Tracy McGrady ,G
+2000-01,3rd,(V),David Robinson ,C
+2000-01,3rd,(V),Karl Malone ,F
+2000-01,3rd,(V),Dirk Nowitzki ,F
+2000-01,3rd,(V),Ray Allen ,G
+2000-01,3rd,(V),Gary Payton ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+1999-00,1st,(V),Shaquille O'Neal ,C
+1999-00,1st,(V),Tim Duncan ,F
+1999-00,1st,(V),Kevin Garnett ,F
+1999-00,1st,(V),Jason Kidd ,G
+1999-00,1st,(V),Gary Payton ,G
+1999-00,2nd,(V),Alonzo Mourning ,C
+1999-00,2nd,(V),Grant Hill ,F
+1999-00,2nd,(V),Karl Malone ,F
+1999-00,2nd,(V),Kobe Bryant ,G
+1999-00,2nd,(V),Allen Iverson ,G
+1999-00,3rd,(V),David Robinson ,C
+1999-00,3rd,(V),Vince Carter ,F
+1999-00,3rd,(V),Chris Webber ,F
+1999-00,3rd,(V),Eddie Jones ,G
+1999-00,3rd,(V),Stephon Marbury ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+1998-99,1st,(V),Alonzo Mourning ,C
+1998-99,1st,(V),Tim Duncan ,F
+1998-99,1st,(V),Karl Malone ,F
+1998-99,1st,(V),Allen Iverson ,G
+1998-99,1st,(V),Jason Kidd ,G
+1998-99,2nd,(V),Shaquille O'Neal ,C
+1998-99,2nd,(V),Grant Hill ,F
+1998-99,2nd,(V),Chris Webber ,F
+1998-99,2nd,(V),Tim Hardaway ,G
+1998-99,2nd,(V),Gary Payton ,G
+1998-99,3rd,(V),Hakeem Olajuwon ,C
+1998-99,3rd,(V),Kevin Garnett ,F
+1998-99,3rd,(V),Antonio McDyess ,F
+1998-99,3rd,(V),Kobe Bryant ,G
+1998-99,3rd,(V),John Stockton ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+1997-98,1st,(V),Shaquille O'Neal ,C
+1997-98,1st,(V),Tim Duncan ,F
+1997-98,1st,(V),Karl Malone ,F
+1997-98,1st,(V),Michael Jordan ,G
+1997-98,1st,(V),Gary Payton ,G
+1997-98,2nd,(V),David Robinson ,C
+1997-98,2nd,(V),Vin Baker ,F
+1997-98,2nd,(V),Grant Hill ,F
+1997-98,2nd,(V),Tim Hardaway ,G
+1997-98,2nd,(V),Rod Strickland ,G
+1997-98,3rd,(V),Dikembe Mutombo ,C
+1997-98,3rd,(V),Scottie Pippen ,F
+1997-98,3rd,(V),Glen Rice ,F
+1997-98,3rd,(V),Reggie Miller ,G
+1997-98,3rd,(V),Mitch Richmond ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+1996-97,1st,(V),Hakeem Olajuwon ,C
+1996-97,1st,(V),Grant Hill ,F
+1996-97,1st,(V),Karl Malone ,F
+1996-97,1st,(V),Tim Hardaway ,G
+1996-97,1st,(V),Michael Jordan ,G
+1996-97,2nd,(V),Patrick Ewing ,C
+1996-97,2nd,(V),Scottie Pippen ,F
+1996-97,2nd,(V),Glen Rice ,F
+1996-97,2nd,(V),Gary Payton ,G
+1996-97,2nd,(V),Mitch Richmond ,G
+1996-97,3rd,(V),Shaquille O'Neal ,C
+1996-97,3rd,(V),Vin Baker ,F
+1996-97,3rd,(V),Anthony Mason ,F
+1996-97,3rd,(V),Anfernee Hardaway ,G
+1996-97,3rd,(V),John Stockton ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+1995-96,1st,(V),David Robinson ,C
+1995-96,1st,(V),Karl Malone ,F
+1995-96,1st,(V),Scottie Pippen ,F
+1995-96,1st,(V),Anfernee Hardaway ,G
+1995-96,1st,(V),Michael Jordan ,G
+1995-96,2nd,(V),Hakeem Olajuwon ,C
+1995-96,2nd,(V),Grant Hill ,F
+1995-96,2nd,(V),Shawn Kemp ,F
+1995-96,2nd,(V),Gary Payton ,G
+1995-96,2nd,(V),John Stockton ,G
+1995-96,3rd,(V),Shaquille O'Neal ,C
+1995-96,3rd,(V),Charles Barkley ,F
+1995-96,3rd,(V),Juwan Howard ,F
+1995-96,3rd,(V),Reggie Miller ,G
+1995-96,3rd,(V),Mitch Richmond ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+1994-95,1st,(V),David Robinson ,C
+1994-95,1st,(V),Karl Malone ,F
+1994-95,1st,(V),Scottie Pippen ,F
+1994-95,1st,(V),Anfernee Hardaway ,G
+1994-95,1st,(V),John Stockton ,G
+1994-95,2nd,(V),Shaquille O'Neal ,C
+1994-95,2nd,(V),Charles Barkley ,F
+1994-95,2nd,(V),Shawn Kemp ,F
+1994-95,2nd,(V),Gary Payton ,G
+1994-95,2nd,(V),Mitch Richmond ,G
+1994-95,3rd,(V),Hakeem Olajuwon ,C
+1994-95,3rd,(V),Dennis Rodman ,F
+1994-95,3rd,(V),Detlef Schrempf ,F
+1994-95,3rd,(V),Clyde Drexler ,G
+1994-95,3rd,(V),Reggie Miller ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+1993-94,1st,(V),Hakeem Olajuwon ,C
+1993-94,1st,(V),Karl Malone ,F
+1993-94,1st,(V),Scottie Pippen ,F
+1993-94,1st,(V),Latrell Sprewell ,G
+1993-94,1st,(V),John Stockton ,G
+1993-94,2nd,(V),David Robinson ,C
+1993-94,2nd,(V),Charles Barkley ,F
+1993-94,2nd,(V),Shawn Kemp ,F
+1993-94,2nd,(V),Kevin Johnson ,G
+1993-94,2nd,(V),Mitch Richmond ,G
+1993-94,3rd,(V),Shaquille O'Neal ,C
+1993-94,3rd,(V),Derrick Coleman ,F
+1993-94,3rd,(V),Dominique Wilkins ,F
+1993-94,3rd,(V),Gary Payton ,G
+1993-94,3rd,(V),Mark Price ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+1992-93,1st,(V),Hakeem Olajuwon ,C
+1992-93,1st,(V),Charles Barkley ,F
+1992-93,1st,(V),Karl Malone ,F
+1992-93,1st,(V),Michael Jordan ,G
+1992-93,1st,(V),Mark Price ,G
+1992-93,2nd,(V),Patrick Ewing ,C
+1992-93,2nd,(V),Larry Johnson ,F
+1992-93,2nd,(V),Dominique Wilkins ,F
+1992-93,2nd,(V),Joe Dumars ,G
+1992-93,2nd,(V),John Stockton ,G
+1992-93,3rd,(V),David Robinson ,C
+1992-93,3rd,(V),Derrick Coleman ,F
+1992-93,3rd,(V),Scottie Pippen ,F
+1992-93,3rd,(V),Tim Hardaway ,G
+1992-93,3rd,(V),Dražen Petrović ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+1991-92,1st,(V),David Robinson ,C
+1991-92,1st,(V),Karl Malone ,F
+1991-92,1st,(V),Chris Mullin ,F
+1991-92,1st,(V),Clyde Drexler ,G
+1991-92,1st,(V),Michael Jordan ,G
+1991-92,2nd,(V),Patrick Ewing ,C
+1991-92,2nd,(V),Charles Barkley ,F
+1991-92,2nd,(V),Scottie Pippen ,F
+1991-92,2nd,(V),Tim Hardaway ,G
+1991-92,2nd,(V),John Stockton ,G
+1991-92,3rd,(V),Brad Daugherty ,C
+1991-92,3rd,(V),Dennis Rodman ,F
+1991-92,3rd,(V),Kevin Willis ,F
+1991-92,3rd,(V),Kevin Johnson ,G
+1991-92,3rd,(V),Mark Price ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+1990-91,1st,(V),David Robinson ,C
+1990-91,1st,(V),Charles Barkley ,F
+1990-91,1st,(V),Karl Malone ,F
+1990-91,1st,(V),Magic Johnson ,G
+1990-91,1st,(V),Michael Jordan ,G
+1990-91,2nd,(V),Patrick Ewing ,C
+1990-91,2nd,(V),Chris Mullin ,F
+1990-91,2nd,(V),Dominique Wilkins ,F
+1990-91,2nd,(V),Clyde Drexler ,G
+1990-91,2nd,(V),Kevin Johnson ,G
+1990-91,3rd,(V),Hakeem Olajuwon ,C
+1990-91,3rd,(V),Bernard King ,F
+1990-91,3rd,(V),James Worthy ,F
+1990-91,3rd,(V),Joe Dumars ,G
+1990-91,3rd,(V),John Stockton ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+1989-90,1st,(V),Patrick Ewing ,C
+1989-90,1st,(V),Charles Barkley ,F
+1989-90,1st,(V),Karl Malone ,F
+1989-90,1st,(V),Magic Johnson ,G
+1989-90,1st,(V),Michael Jordan ,G
+1989-90,2nd,(V),Hakeem Olajuwon ,C
+1989-90,2nd,(V),Larry Bird ,F
+1989-90,2nd,(V),Tom Chambers ,F
+1989-90,2nd,(V),Kevin Johnson ,G
+1989-90,2nd,(V),John Stockton ,G
+1989-90,3rd,(V),David Robinson ,C
+1989-90,3rd,(V),Chris Mullin ,F
+1989-90,3rd,(V),James Worthy ,F
+1989-90,3rd,(V),Clyde Drexler ,G
+1989-90,3rd,(V),Joe Dumars ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+1988-89,1st,(V),Hakeem Olajuwon ,C
+1988-89,1st,(V),Charles Barkley ,F
+1988-89,1st,(V),Karl Malone ,F
+1988-89,1st,(V),Magic Johnson ,G
+1988-89,1st,(V),Michael Jordan ,G
+1988-89,2nd,(V),Patrick Ewing ,C
+1988-89,2nd,(V),Tom Chambers ,F
+1988-89,2nd,(V),Chris Mullin ,F
+1988-89,2nd,(V),Kevin Johnson ,G
+1988-89,2nd,(V),John Stockton ,G
+1988-89,3rd,(V),Robert Parish ,C
+1988-89,3rd,(V),Terry Cummings ,F
+1988-89,3rd,(V),Dominique Wilkins ,F
+1988-89,3rd,(V),Dale Ellis ,G
+1988-89,3rd,(V),Mark Price ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+1987-88,1st,(V),Hakeem Olajuwon ,C
+1987-88,1st,(V),Charles Barkley ,F
+1987-88,1st,(V),Larry Bird ,F
+1987-88,1st,(V),Magic Johnson ,G
+1987-88,1st,(V),Michael Jordan ,G
+1987-88,2nd,(V),Patrick Ewing ,C
+1987-88,2nd,(V),Karl Malone ,F
+1987-88,2nd,(V),Dominique Wilkins ,F
+1987-88,2nd,(V),Clyde Drexler ,G
+1987-88,2nd,(V),John Stockton ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+1986-87,1st,(V),Hakeem Olajuwon ,C
+1986-87,1st,(V),Larry Bird ,F
+1986-87,1st,(V),Kevin McHale ,F
+1986-87,1st,(V),Magic Johnson ,G
+1986-87,1st,(V),Michael Jordan ,G
+1986-87,2nd,(V),Moses Malone ,C
+1986-87,2nd,(V),Charles Barkley ,F
+1986-87,2nd,(V),Dominique Wilkins ,F
+1986-87,2nd,(V),Fat Lever ,G
+1986-87,2nd,(V),Isiah Thomas ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+1985-86,1st,(V),Kareem Abdul-Jabbar ,C
+1985-86,1st,(V),Larry Bird ,F
+1985-86,1st,(V),Dominique Wilkins ,F
+1985-86,1st,(V),Magic Johnson ,G
+1985-86,1st,(V),Isiah Thomas ,G
+1985-86,2nd,(V),Hakeem Olajuwon ,C
+1985-86,2nd,(V),Charles Barkley ,F
+1985-86,2nd,(V),Alex English ,F
+1985-86,2nd,(V),Sidney Moncrief ,G
+1985-86,2nd,(V),Alvin Robertson ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+1984-85,1st,(V),Moses Malone ,C
+1984-85,1st,(V),Larry Bird ,F
+1984-85,1st,(V),Bernard King ,F
+1984-85,1st,(V),Magic Johnson ,G
+1984-85,1st,(V),Isiah Thomas ,G
+1984-85,2nd,(V),Kareem Abdul-Jabbar ,C
+1984-85,2nd,(V),Terry Cummings ,F
+1984-85,2nd,(V),Ralph Sampson ,F
+1984-85,2nd,(V),Michael Jordan ,G
+1984-85,2nd,(V),Sidney Moncrief ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+1983-84,1st,(V),Kareem Abdul-Jabbar ,C
+1983-84,1st,(V),Larry Bird ,F
+1983-84,1st,(V),Bernard King ,F
+1983-84,1st,(V),Magic Johnson ,G
+1983-84,1st,(V),Isiah Thomas ,G
+1983-84,2nd,(V),Moses Malone ,C
+1983-84,2nd,(V),Adrian Dantley ,F
+1983-84,2nd,(V),Julius Erving ,F
+1983-84,2nd,(V),Sidney Moncrief ,G
+1983-84,2nd,(V),Jim Paxson ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+1982-83,1st,(V),Moses Malone ,C
+1982-83,1st,(V),Larry Bird ,F
+1982-83,1st,(V),Julius Erving ,F
+1982-83,1st,(V),Magic Johnson ,G
+1982-83,1st,(V),Sidney Moncrief ,G
+1982-83,2nd,(V),Kareem Abdul-Jabbar ,C
+1982-83,2nd,(V),Alex English ,F
+1982-83,2nd,(V),Buck Williams ,F
+1982-83,2nd,(V),George Gervin ,G
+1982-83,2nd,(V),Isiah Thomas ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+1981-82,1st,(V),Moses Malone ,C
+1981-82,1st,(V),Larry Bird ,F
+1981-82,1st,(V),Julius Erving ,F
+1981-82,1st,(V),George Gervin ,G
+1981-82,1st,(V),Gus Williams ,G
+1981-82,2nd,(V),Robert Parish ,C
+1981-82,2nd,(V),Alex English ,F
+1981-82,2nd,(V),Bernard King ,F
+1981-82,2nd,(V),Magic Johnson ,G
+1981-82,2nd,(V),Sidney Moncrief ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+1980-81,1st,(V),Kareem Abdul-Jabbar ,C
+1980-81,1st,(V),Larry Bird ,F
+1980-81,1st,(V),Julius Erving ,F
+1980-81,1st,(V),George Gervin ,G
+1980-81,1st,(V),Dennis Johnson ,G
+1980-81,2nd,(V),Moses Malone ,C
+1980-81,2nd,(V),Adrian Dantley ,F
+1980-81,2nd,(V),Marques Johnson ,F
+1980-81,2nd,(V),Tiny Archibald ,G
+1980-81,2nd,(V),Otis Birdsong ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+1979-80,1st,(V),Kareem Abdul-Jabbar ,C
+1979-80,1st,(V),Larry Bird ,F
+1979-80,1st,(V),Julius Erving ,F
+1979-80,1st,(V),George Gervin ,G
+1979-80,1st,(V),Paul Westphal ,G
+1979-80,2nd,(V),Moses Malone ,C
+1979-80,2nd,(V),Marques Johnson ,F
+1979-80,2nd,(V),Dan Roundfield ,F
+1979-80,2nd,(V),Dennis Johnson ,G
+1979-80,2nd,(V),Gus Williams ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+1978-79,1st,(V),Moses Malone ,C
+1978-79,1st,(V),Elvin Hayes ,F
+1978-79,1st,(V),Marques Johnson ,F
+1978-79,1st,(V),George Gervin ,G
+1978-79,1st,(V),Paul Westphal ,G
+1978-79,2nd,(V),Kareem Abdul-Jabbar ,C
+1978-79,2nd,(V),Bob Dandridge ,F
+1978-79,2nd,(V),Walter Davis ,F
+1978-79,2nd,(V),Phil Ford ,G
+1978-79,2nd,(V),World B. Free ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+1977-78,1st,(V),Bill Walton ,C
+1977-78,1st,(V),Julius Erving ,F
+1977-78,1st,(V),Truck Robinson ,F
+1977-78,1st,(V),George Gervin ,G
+1977-78,1st,(V),David Thompson ,G
+1977-78,2nd,(V),Kareem Abdul-Jabbar ,C
+1977-78,2nd,(V),Walter Davis ,F
+1977-78,2nd,(V),Maurice Lucas ,F
+1977-78,2nd,(V),Pete Maravich ,G
+1977-78,2nd,(V),Paul Westphal ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+1976-77,1st,(V),Kareem Abdul-Jabbar ,C
+1976-77,1st,(V),Elvin Hayes ,F
+1976-77,1st,(V),David Thompson ,F
+1976-77,1st,(V),Pete Maravich ,G
+1976-77,1st,(V),Paul Westphal ,G
+1976-77,2nd,(V),Bill Walton ,C
+1976-77,2nd,(V),Julius Erving ,F
+1976-77,2nd,(V),George McGinnis ,F
+1976-77,2nd,(V),George Gervin ,G
+1976-77,2nd,(V),Jo Jo White ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+1975-76,1st,(V),Kareem Abdul-Jabbar ,C
+1975-76,1st,(V),Rick Barry ,F
+1975-76,1st,(V),George McGinnis ,F
+1975-76,1st,(V),Tiny Archibald ,G
+1975-76,1st,(V),Pete Maravich ,G
+1975-76,2nd,(V),Dave Cowens ,C
+1975-76,2nd,(V),John Havlicek ,F
+1975-76,2nd,(V),Elvin Hayes ,F
+1975-76,2nd,(V),Phil Smith ,G
+1975-76,2nd,(V),Randy Smith ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+1975-76,1st,,Artis Gilmore ,C
+1975-76,1st,,Julius Erving ,F
+1975-76,1st,,Billy Knight ,F
+1975-76,1st,,James Silas ,G
+1975-76,1st,,Ralph Simpson ,G
+1975-76,2nd,,Dan Issel ,C
+1975-76,2nd,,Bobby Jones ,F
+1975-76,2nd,,David Thompson ,F
+1975-76,2nd,,Don Buse ,G
+1975-76,2nd,,George Gervin ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+1974-75,1st,(V),Bob McAdoo ,C
+1974-75,1st,(V),Rick Barry ,F
+1974-75,1st,(V),Elvin Hayes ,F
+1974-75,1st,(V),Tiny Archibald ,G
+1974-75,1st,(V),Walt Frazier ,G
+1974-75,2nd,(V),Dave Cowens ,C
+1974-75,2nd,(V),John Havlicek ,F
+1974-75,2nd,(V),Spencer Haywood ,F
+1974-75,2nd,(V),Phil Chenier ,G
+1974-75,2nd,(V),Jo Jo White ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+1974-75,1st,,Artis Gilmore ,C
+1974-75,1st,,Julius Erving ,F
+1974-75,1st,,George McGinnis ,F
+1974-75,1st,,Ron Boone ,G
+1974-75,1st,,Mack Calvin ,G
+1974-75,2nd,,Swen Nater ,C
+1974-75,2nd,,Marvin Barnes ,F
+1974-75,2nd,,George Gervin ,F
+1974-75,2nd,,James Silas ,G
+1974-75,2nd,,Brian Taylor ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+1973-74,1st,(V),Kareem Abdul-Jabbar ,C
+1973-74,1st,(V),Rick Barry ,F
+1973-74,1st,(V),John Havlicek ,F
+1973-74,1st,(V),Walt Frazier ,G
+1973-74,1st,(V),Gail Goodrich ,G
+1973-74,2nd,(V),Bob McAdoo ,C
+1973-74,2nd,(V),Elvin Hayes ,F
+1973-74,2nd,(V),Spencer Haywood ,F
+1973-74,2nd,(V),Dave Bing ,G
+1973-74,2nd,(V),Norm Van Lier ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+1973-74,1st,,Artis Gilmore ,C
+1973-74,1st,,Julius Erving ,F
+1973-74,1st,,George McGinnis ,F
+1973-74,1st,,Mack Calvin ,G
+1973-74,1st,,Jimmy Jones ,G
+1973-74,2nd,,Swen Nater ,C
+1973-74,2nd,,Dan Issel ,F
+1973-74,2nd,,Willie Wise ,F
+1973-74,2nd,,Ron Boone ,G
+1973-74,2nd,,Louie Dampier ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+1972-73,1st,(V),Kareem Abdul-Jabbar ,C
+1972-73,1st,(V),John Havlicek ,F
+1972-73,1st,(V),Spencer Haywood ,F
+1972-73,1st,(V),Tiny Archibald ,G
+1972-73,1st,(V),Jerry West ,G
+1972-73,2nd,(V),Dave Cowens ,C
+1972-73,2nd,(V),Rick Barry ,F
+1972-73,2nd,(V),Elvin Hayes ,F
+1972-73,2nd,(V),Walt Frazier ,G
+1972-73,2nd,(V),Pete Maravich ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+1972-73,1st,,Artis Gilmore ,C
+1972-73,1st,,Billy Cunningham ,F
+1972-73,1st,,Julius Erving ,F
+1972-73,1st,,Warren Jabali ,G
+1972-73,1st,,Jimmy Jones ,G
+1972-73,2nd,,Mel Daniels ,C
+1972-73,2nd,,Dan Issel ,F
+1972-73,2nd,,George McGinnis ,F
+1972-73,2nd,,Mack Calvin ,G
+1972-73,2nd,,Ralph Simpson ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+1971-72,1st,(V),Kareem Abdul-Jabbar ,C
+1971-72,1st,(V),John Havlicek ,F
+1971-72,1st,(V),Spencer Haywood ,F
+1971-72,1st,(V),Walt Frazier ,G
+1971-72,1st,(V),Jerry West ,G
+1971-72,2nd,(V),Wilt Chamberlain ,C
+1971-72,2nd,(V),Billy Cunningham ,F
+1971-72,2nd,(V),Bob Love ,F
+1971-72,2nd,(V),Tiny Archibald ,G
+1971-72,2nd,(V),Archie Clark ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+1971-72,1st,,Artis Gilmore ,C
+1971-72,1st,,Rick Barry ,F
+1971-72,1st,,Dan Issel ,F
+1971-72,1st,,Donnie Freeman ,G
+1971-72,1st,,Bill Melchionni ,G
+1971-72,2nd,,Zelmo Beaty ,C
+1971-72,2nd,,Julius Erving ,F
+1971-72,2nd,,Willie Wise ,F
+1971-72,2nd,,Charlie Scott ,G
+1971-72,2nd,,Ralph Simpson ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+1970-71,1st,(V),Kareem Abdul-Jabbar ,C
+1970-71,1st,(V),Billy Cunningham ,F
+1970-71,1st,(V),John Havlicek ,F
+1970-71,1st,(V),Dave Bing ,G
+1970-71,1st,(V),Jerry West ,G
+1970-71,2nd,(V),Willis Reed ,C
+1970-71,2nd,(V),Gus Johnson ,F
+1970-71,2nd,(V),Bob Love ,F
+1970-71,2nd,(V),Walt Frazier ,G
+1970-71,2nd,(V),Oscar Robertson ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+1970-71,1st,,Mel Daniels ,C
+1970-71,1st,,Rick Barry ,F
+1970-71,1st,,Roger Brown ,F
+1970-71,1st,,Mack Calvin ,G
+1970-71,1st,,Charlie Scott ,G
+1970-71,2nd,,John Brisker ,F
+1970-71,2nd,,Joe Caldwell ,F
+1970-71,2nd,,Larry Cannon ,G
+1970-71,2nd,,Donnie Freeman ,G
+1970-71,2nd,,"Zelmo Beaty C, Dan Issel C (T",
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+1969-70,1st,(V),Willis Reed ,C
+1969-70,1st,(V),Billy Cunningham ,F
+1969-70,1st,(V),Connie Hawkins ,F
+1969-70,1st,(V),Walt Frazier ,G
+1969-70,1st,(V),Jerry West ,G
+1969-70,2nd,(V),Kareem Abdul-Jabbar ,C
+1969-70,2nd,(V),John Havlicek ,F
+1969-70,2nd,(V),Gus Johnson ,F
+1969-70,2nd,(V),Lou Hudson ,G
+1969-70,2nd,(V),Oscar Robertson ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+1969-70,1st,,Mel Daniels ,C
+1969-70,1st,,Rick Barry ,F
+1969-70,1st,,Spencer Haywood ,F
+1969-70,1st,,Larry Jones ,G
+1969-70,1st,,Bob Verga ,G
+1969-70,2nd,,Red Robbins ,C
+1969-70,2nd,,Roger Brown ,F
+1969-70,2nd,,Bob Netolicky ,F
+1969-70,2nd,,Louie Dampier ,G
+1969-70,2nd,,Donnie Freeman ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+1968-69,1st,(V),Wes Unseld ,C
+1968-69,1st,(V),Elgin Baylor ,F
+1968-69,1st,(V),Billy Cunningham ,F
+1968-69,1st,(V),Earl Monroe ,G
+1968-69,1st,(V),Oscar Robertson ,G
+1968-69,2nd,(V),Willis Reed ,C
+1968-69,2nd,(V),Dave DeBusschere ,F
+1968-69,2nd,(V),John Havlicek ,F
+1968-69,2nd,(V),Hal Greer ,G
+1968-69,2nd,(V),Jerry West ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+1968-69,1st,,Mel Daniels ,C
+1968-69,1st,,Rick Barry ,F
+1968-69,1st,,Connie Hawkins ,F
+1968-69,1st,,Jimmy Jones ,G
+1968-69,1st,,Larry Jones ,G
+1968-69,2nd,,Red Robbins ,C
+1968-69,2nd,,John Beasley ,F
+1968-69,2nd,,Doug Moe ,F
+1968-69,2nd,,Louie Dampier ,G
+1968-69,2nd,,Donnie Freeman ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+1967-68,1st,(V),Wilt Chamberlain ,C
+1967-68,1st,(V),Elgin Baylor ,F
+1967-68,1st,(V),Jerry Lucas ,F
+1967-68,1st,(V),Dave Bing ,G
+1967-68,1st,(V),Oscar Robertson ,G
+1967-68,2nd,(V),Bill Russell ,C
+1967-68,2nd,(V),John Havlicek ,F
+1967-68,2nd,(V),Willis Reed ,F
+1967-68,2nd,(V),Hal Greer ,G
+1967-68,2nd,(V),Jerry West ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+1967-68,1st,,Mel Daniels ,C
+1967-68,1st,,Connie Hawkins ,F
+1967-68,1st,,Doug Moe ,F
+1967-68,1st,,Larry Jones ,G
+1967-68,1st,,Charles Williams ,G
+1967-68,2nd,,John Beasley ,C
+1967-68,2nd,,Roger Brown ,F
+1967-68,2nd,,Cincy Powell ,F
+1967-68,2nd,,Larry Brown ,G
+1967-68,2nd,,Louie Dampier ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+1966-67,1st,(V),Wilt Chamberlain ,C
+1966-67,1st,(V),Rick Barry ,F
+1966-67,1st,(V),Elgin Baylor ,F
+1966-67,1st,(V),Oscar Robertson ,G
+1966-67,1st,(V),Jerry West ,G
+1966-67,2nd,(V),Bill Russell ,C
+1966-67,2nd,(V),Jerry Lucas ,F
+1966-67,2nd,(V),Willis Reed ,F
+1966-67,2nd,(V),Hal Greer ,G
+1966-67,2nd,(V),Sam Jones ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+1965-66,1st,,Wilt Chamberlain ,C
+1965-66,1st,,Rick Barry ,F
+1965-66,1st,,Jerry Lucas ,F
+1965-66,1st,,Oscar Robertson ,G
+1965-66,1st,,Jerry West ,G
+1965-66,2nd,,Bill Russell ,C
+1965-66,2nd,,John Havlicek ,F
+1965-66,2nd,,Gus Johnson ,F
+1965-66,2nd,,Hal Greer ,G
+1965-66,2nd,,Sam Jones ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+1964-65,1st,,Bill Russell ,C
+1964-65,1st,,Elgin Baylor ,F
+1964-65,1st,,Jerry Lucas ,F
+1964-65,1st,,Oscar Robertson ,G
+1964-65,1st,,Jerry West ,G
+1964-65,2nd,,Wilt Chamberlain ,C
+1964-65,2nd,,Gus Johnson ,F
+1964-65,2nd,,Bob Pettit ,F
+1964-65,2nd,,Hal Greer ,G
+1964-65,2nd,,Sam Jones ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+1963-64,1st,,Wilt Chamberlain ,C
+1963-64,1st,,Elgin Baylor ,F
+1963-64,1st,,Bob Pettit ,F
+1963-64,1st,,Oscar Robertson ,G
+1963-64,1st,,Jerry West ,G
+1963-64,2nd,,Bill Russell ,C
+1963-64,2nd,,Tom Heinsohn ,F
+1963-64,2nd,,Jerry Lucas ,F
+1963-64,2nd,,Hal Greer ,G
+1963-64,2nd,,John Havlicek ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+1962-63,1st,,Bill Russell ,C
+1962-63,1st,,Elgin Baylor ,F
+1962-63,1st,,Bob Pettit ,F
+1962-63,1st,,Oscar Robertson ,G
+1962-63,1st,,Jerry West ,G
+1962-63,2nd,,Wilt Chamberlain ,C
+1962-63,2nd,,Tom Heinsohn ,F
+1962-63,2nd,,Bailey Howell ,F
+1962-63,2nd,,Bob Cousy ,G
+1962-63,2nd,,Hal Greer ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+1961-62,1st,,Wilt Chamberlain ,C
+1961-62,1st,,Elgin Baylor ,F
+1961-62,1st,,Bob Pettit ,F
+1961-62,1st,,Oscar Robertson ,G
+1961-62,1st,,Jerry West ,G
+1961-62,2nd,,Bill Russell ,C
+1961-62,2nd,,Tom Heinsohn ,F
+1961-62,2nd,,Jack Twyman ,F
+1961-62,2nd,,Bob Cousy ,G
+1961-62,2nd,,Richie Guerin ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+1960-61,1st,,Wilt Chamberlain ,C
+1960-61,1st,,Elgin Baylor ,F
+1960-61,1st,,Bob Pettit ,F
+1960-61,1st,,Bob Cousy ,G
+1960-61,1st,,Oscar Robertson ,G
+1960-61,2nd,,Bill Russell ,C
+1960-61,2nd,,Tom Heinsohn ,F
+1960-61,2nd,,Dolph Schayes ,F
+1960-61,2nd,,Larry Costello ,G
+1960-61,2nd,,Gene Shue ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+1959-60,1st,,Wilt Chamberlain ,C
+1959-60,1st,,Elgin Baylor ,F
+1959-60,1st,,Bob Pettit ,F
+1959-60,1st,,Bob Cousy ,G
+1959-60,1st,,Gene Shue ,G
+1959-60,2nd,,Bill Russell ,C
+1959-60,2nd,,Dolph Schayes ,F
+1959-60,2nd,,Jack Twyman ,F
+1959-60,2nd,,Richie Guerin ,G
+1959-60,2nd,,Bill Sharman ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+1958-59,1st,,Bill Russell ,C
+1958-59,1st,,Elgin Baylor ,F
+1958-59,1st,,Bob Pettit ,F
+1958-59,1st,,Bob Cousy ,G
+1958-59,1st,,Bill Sharman ,G
+1958-59,2nd,,Dolph Schayes ,C
+1958-59,2nd,,Paul Arizin ,F
+1958-59,2nd,,Cliff Hagan ,F
+1958-59,2nd,,Richie Guerin ,G
+1958-59,2nd,,Slater Martin ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+1957-58,1st,,Bob Pettit ,C
+1957-58,1st,,Dolph Schayes ,F
+1957-58,1st,,George Yardley ,F
+1957-58,1st,,Bob Cousy ,G
+1957-58,1st,,Bill Sharman ,G
+1957-58,2nd,,Bill Russell ,C
+1957-58,2nd,,Cliff Hagan ,F
+1957-58,2nd,,Maurice Stokes ,F
+1957-58,2nd,,Tom Gola ,G
+1957-58,2nd,,Slater Martin ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+1956-57,1st,,Bob Pettit ,C
+1956-57,1st,,Paul Arizin ,F
+1956-57,1st,,Dolph Schayes ,F
+1956-57,1st,,Bob Cousy ,G
+1956-57,1st,,Bill Sharman ,G
+1956-57,2nd,,Neil Johnston ,C
+1956-57,2nd,,Maurice Stokes ,F
+1956-57,2nd,,George Yardley ,F
+1956-57,2nd,,Dick Garmaker ,G
+1956-57,2nd,,Slater Martin ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+1955-56,1st,,Neil Johnston ,C
+1955-56,1st,,Paul Arizin ,F
+1955-56,1st,,Bob Pettit ,F
+1955-56,1st,,Bob Cousy ,G
+1955-56,1st,,Bill Sharman ,G
+1955-56,2nd,,Clyde Lovellette ,C
+1955-56,2nd,,Dolph Schayes ,F
+1955-56,2nd,,Maurice Stokes ,F
+1955-56,2nd,,Jack George ,G
+1955-56,2nd,,Slater Martin ,G
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+1954-55,1st,,Bob Cous,
+1954-55,1st,,Larry Fous,
+1954-55,1st,,Neil Johnsto,
+1954-55,1st,,Bob Petti,
+1954-55,1st,,Dolph Schaye,
+1954-55,2nd,,Harry Gallati,
+1954-55,2nd,,Slater Marti,
+1954-55,2nd,,Vern Mikkelse,
+1954-55,2nd,,Paul Seymou,
+1954-55,2nd,,Bill Sharma,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+1953-54,1st,,Bob Cous,
+1953-54,1st,,Harry Gallati,
+1953-54,1st,,Neil Johnsto,
+1953-54,1st,,George Mika,
+1953-54,1st,,Dolph Schaye,
+1953-54,2nd,,Carl Brau,
+1953-54,2nd,,Ed Macaule,
+1953-54,2nd,,Jim Pollar,
+1953-54,2nd,,Paul Seymou,
+1953-54,2nd,,Bobby Wanze,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+1952-53,1st,,Bob Cous,
+1952-53,1st,,Neil Johnsto,
+1952-53,1st,,Ed Macaule,
+1952-53,1st,,George Mika,
+1952-53,1st,,Dolph Schaye,
+1952-53,2nd,,Bob Davie,
+1952-53,2nd,,Vern Mikkelse,
+1952-53,2nd,,Andy Philli,
+1952-53,2nd,,Bill Sharma,
+1952-53,2nd,,Bobby Wanze,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+1951-52,1st,,Paul Arizi,
+1951-52,1st,,Bob Cous,
+1951-52,1st,,Ed Macaule,
+1951-52,1st,,George Mika,
+1951-52,1st,,"Bob Davies , Dolph Schayes (T",
+1951-52,2nd,,Larry Fous,
+1951-52,2nd,,Vern Mikkelse,
+1951-52,2nd,,Andy Philli,
+1951-52,2nd,,Jim Pollar,
+1951-52,2nd,,Bobby Wanze,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+1950-51,1st,,Ralph Bear,
+1950-51,1st,,Bob Davie,
+1950-51,1st,,Alex Groz,
+1950-51,1st,,Ed Macaule,
+1950-51,1st,,George Mika,
+1950-51,2nd,,Frankie Bria,
+1950-51,2nd,,Joe Fulk,
+1950-51,2nd,,Dick McGuir,
+1950-51,2nd,,Vern Mikkelse,
+1950-51,2nd,,Dolph Schaye,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+1949-50,1st,,Bob Davie,
+1949-50,1st,,Alex Groz,
+1949-50,1st,,George Mika,
+1949-50,1st,,Jim Pollar,
+1949-50,1st,,Max Zaslofsk,
+1949-50,2nd,,Ralph Bear,
+1949-50,2nd,,Frankie Bria,
+1949-50,2nd,,Al Cerv,
+1949-50,2nd,,Fred Schau,
+1949-50,2nd,,Dolph Schaye,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+1948-49,1st,,Bob Davie,
+1948-49,1st,,Joe Fulk,
+1948-49,1st,,George Mika,
+1948-49,1st,,Jim Pollar,
+1948-49,1st,,Max Zaslofsk,
+1948-49,2nd,,Bob Feeric,
+1948-49,2nd,,John Loga,
+1948-49,2nd,,Bones McKinne,
+1948-49,2nd,,Arnie Rise,
+1948-49,2nd,,Kenny Sailor,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+1947-48,1st,,Howie Dallma,
+1947-48,1st,,Bob Feeric,
+1947-48,1st,,Joe Fulk,
+1947-48,1st,,Ed Sadowsk,
+1947-48,1st,,Max Zaslofsk,
+1947-48,2nd,,Carl Brau,
+1947-48,2nd,,Buddy Jeannett,
+1947-48,2nd,,John Loga,
+1947-48,2nd,,Stan Miase,
+1947-48,2nd,,Fred Scolar,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+1946-47,1st,,Bob Feeric,
+1946-47,1st,,Joe Fulk,
+1946-47,1st,,Bones McKinne,
+1946-47,1st,,Stan Miase,
+1946-47,1st,,Max Zaslofsk,
+1946-47,2nd,,Frankie Baumholt,
+1946-47,2nd,,Ernie Calverle,
+1946-47,2nd,,Chick Halber,
+1946-47,2nd,,John Loga,
+1946-47,2nd,,Fred Scolar,
