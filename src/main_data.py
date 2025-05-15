@@ -11,19 +11,19 @@ def get_season_stats(season, season_type="Regular Season"):
     stats = leaguedashplayerstats.LeagueDashPlayerStats(
         season=season,
         season_type_all_star=season_type,
-        per_mode_detailed="Totals"
+        per_mode_detailed="PerGame"
     )
     df = stats.get_data_frames()[0]
     df["SEASON"] = season
     return df
 
 def main():
-    start_year = 1946
-    end_year = 2024  # You can adjust this for more/less seasons
+    start_year = 1988
+    end_year = 2025  # You can adjust this for more/less seasons
 
     all_seasons = [f"{year}-{str(year+1)[-2:]}" for year in range(start_year, end_year)]
     all_data = []
-
+    print(all_seasons)
     for season in tqdm(all_seasons, desc="Fetching season data"):
         try:
             df = get_season_stats(season)
@@ -36,8 +36,8 @@ def main():
     combined_df = pd.concat(all_data, ignore_index=True)
 
     # Save full dataset
-    combined_df.to_csv("nba_bulk_season_stats_total_1946_2024.csv", index=False)
-    print("✅ Data saved to nba_bulk_season_stats_total_1946_2024.csv")
+    combined_df.to_csv("nba_bulk_season_stats_1988_2024.csv", index=False)
+    print("✅ Data saved to nba_bulk_season_stats_1988_2024.csv")
 
 if __name__ == "__main__":
     main()

@@ -1,94 +1,106 @@
 import os
 import sys
 import time as t
-from urllib.parse import urljoin
-
 import numpy as np
 import pandas as pd
-import requests
-from bs4 import BeautifulSoup
 
+CURRENT_YEAR = 2023
 
-import pandas as pd
-from ydata_profiling import ProfileReport
+def normalize_season(season_str):
+    if '-' in season_str:
+        return int(season_str[:4])
+    return int(season_str)
 
-# df = pd.read_csv("data/nba_bulk_season_stats_2000_2025.csv")
-# profile = ProfileReport(df, title="Profiling Report")
-# profile.to_file("nba_stats_profile.html")
+def encode_five_number(five_str):
+    return int(five_str[0])
 
-MAIN_URL = r"https://www.basketball-reference.com/"
-ALPHABET_URL = r"https://www.basketball-reference.com/players/"
-ALL_NBA_URL = r"https://www.basketball-reference.com/awards/all_league.html"
-ALL_DEFENSIVE_URL= r"https://www.basketball-reference.com/awards/all_defense.html"
-MVP_URL = r"https://www.basketball-reference.com/awards/mvp.html"
-SEASON_URL = r"https://www.basketball-reference.com/leagues/"
+def nba_com():
+    x_file = f"data/nba_bulk_season_stats_1996_2024.csv"
+    y_file = f"data/all_nba_results.csv"
 
-DATA_PATH = r"/home/bartek/Studia/Projekty/WZUM/data"
-PLAYER_HTML_PATH = os.path.join(DATA_PATH, "PLAYER_HTML")
-AWARD_HTML_PATH = os.path.join(DATA_PATH, "AWARD_HTML")
-SEASON_HTML_PATH = os.path.join(DATA_PATH, "SEASON_HTML")
+    df_table = pd.read_csv(x_file)
+    temp = pd.read_csv(y_file)
 
-ALPHABET_PATH = os.path.join(DATA_PATH, "Alphabet_Urls.csv")
-PLAYER_PATH = os.path.join(DATA_PATH, "Player_Urls.csv")
-AWARD_PATH = os.path.join(DATA_PATH, "Award_Urls.csv")
-SEASON_PATH = os.path.join(DATA_PATH, "Season_Urls.csv")
+    temp.dropna(how="all", inplace=True) 
 
-PARSER = 'lxml'
-ONLY_ACTIVE_PLAYER = True
+    df_table["SEASON"] = df_table["SEASON"].apply(normalize_season)
+    temp["Season"] = temp["Season"].apply(normalize_season)
+    temp["Team"] = temp["Team"].apply(encode_five_number)
 
-def filter_out_comment(soup: BeautifulSoup) -> BeautifulSoup:
-    content = str(soup).replace('<!--', '')
-    content = content.replace('-->', '')
-    return BeautifulSoup(content, PARSER)
+    df_table["PLAYER_NAME"] = df_table["PLAYER_NAME"].str.strip()
+    temp["Player"] = temp["Player"].str.strip()
 
-def request_data(url: str, sleep_time_sec: float = 1.0, with_comment: bool = True) -> BeautifulSoup:
-    t.sleep(sleep_time_sec)
-    
-    if with_comment: 
-        return BeautifulSoup(requests.get(url).content, PARSER)
-    return filter_out_comment(BeautifulSoup(requests.get(url).content, PARSER))
+    df_table = df_table[df_table["GP"] > 10]
 
-def season_to_int(cell_value: str):
-    if cell_value[-2:] == "00":
-        return (int(cell_value[:2]) + 1)*100
-    else:
-        return int(cell_value[:2] + cell_value[-2:])   
+    df_table["AllNBA"] = 0
 
-
-# MVP Voting
-content = request_data(url=MVP_URL, sleep_time_sec=4.0, with_comment=False)
-table = content.find("table", id="mvp_NBA")
-df_table = pd.read_html(str(table))[0]
-df_table = df_table.droplevel(0, axis=1)
-df_table['Season'] = df_table['Season'].apply(lambda x: season_to_int(x))
-
-votings = []
-for td in table.find("tbody").findAll("td", class_="center", attrs={"data-stat":"voting"}):
-    votings.append(urljoin(MAIN_URL, td.a['href']))
-df_table.insert(loc=len(df_table.columns), column='Voting_Url', value=votings)
-
-df_table = df_table[['Season', 'Voting_Url']]
-df_table['Voting_Path'] = df_table['Voting_Url'].apply(lambda cell: os.path.join(AWARD_HTML_PATH, cell.replace("/", "{").replace(":", "}")))
-
-# All NBA
-df_table.loc[len(df_table)] = ["All_NBA", ALL_NBA_URL, os.path.join(AWARD_HTML_PATH, ALL_NBA_URL.replace("/", "{").replace(":", "}"))]
-
-# All Defensive
-df_table.loc[len(df_table)] = ["All_DEFENSIVE", ALL_DEFENSIVE_URL, os.path.join(AWARD_HTML_PATH, ALL_DEFENSIVE_URL.replace("/", "{").replace(":", "}"))]
-
-df_table.to_csv(AWARD_PATH, index=False, encoding="utf-8-sig")
-print("Saved to: ", AWARD_PATH)
-
-df_award = pd.read_csv(AWARD_PATH, encoding="utf-8-sig")
-i = 0
-
-for url, path in df_award[['Voting_Url', 'Voting_Path']].values:
-    i += 1
-    sys.stdout.write(f"\r{i}/{len(df_award)}...")
-    
-    content = request_data(url=url, sleep_time_sec=4.0, with_comment=False)
-    with open(path, "w", encoding='utf-8-sig') as f:
-        f.write(str(content))
-        f.close()
+    for i, row in temp.iterrows():
+        player = row["Player"]
+        season = row["Season"]
         
-print("\nSaved to: ", AWARD_HTML_PATH, "...")
+        mask = (df_table["PLAYER_NAME"] == player) & (df_table["SEASON"] == season)
+        df_table.loc[mask, "AllNBA"] = row["Team"]
+
+    #Split to train and test
+    df_test = df_table[df_table['SEASON'] == CURRENT_YEAR]
+    df_table = df_table[df_table['SEASON'] < CURRENT_YEAR]
+
+    to_keep = ["SEASON", "PLAYER_NAME", "PTS", "REB", "AST", "STL", "BLK", "AllNBA"]
+
+    df_table = df_table[to_keep]
+    df_test = df_test[to_keep]
+
+    df_table.to_csv(f"train_data_test.csv", index=False)
+
+
+def basketball_ref():
+    df1 = pd.DataFrame()
+    df2 = pd.DataFrame()
+    for i in range(1989, CURRENT_YEAR + 2):
+        file = f"data_adv/test_{i}.csv"
+        df_table = pd.read_csv(file)
+        df1 = pd.concat([df1, df_table], ignore_index=True)
+
+        file = f"data_per_game/per_game_{i}.csv"
+        df_table = pd.read_csv(file)
+        df2 = pd.concat([df2, df_table], ignore_index=True)
+
+    df1['Player'] = df1['Player'].str.strip()
+    df2['Player'] = df2['Player'].str.strip()
+
+    df1.dropna(subset=["Rk"], inplace=True)
+    df2.dropna(subset=["Rk"], inplace=True)
+    
+    to_keep_adv = ["Player", "Season", "TS%", "WS/48", "VORP"]
+    to_keep_per_game = ["Player", "Season", "Team", "PTS", "TRB", "AST", "STL", "BLK"]
+
+    df1 = df1[to_keep_adv]
+    df2 = df2[to_keep_per_game]
+
+    merged_df = pd.merge(df1, df2, on=['Player', 'Season'], how='inner', suffixes=('_adv', '_pg'))
+
+    merged_df = merged_df.drop_duplicates(subset=['Player', 'Season'], keep='first')
+    merged_df.drop(columns=['Team'], inplace=True)
+    merged_df["AllNBA"] = 0
+
+    y_file = f"data/all_nba_results.csv"
+    temp = pd.read_csv(y_file)
+
+    temp.dropna(how="all", inplace=True) 
+    temp["Season"] = temp["Season"].apply(normalize_season)
+    temp["Team"] = temp["Team"].apply(encode_five_number)
+    temp["Player"] = temp["Player"].str.strip()
+    
+    for i, row in temp.iterrows():
+        player = row["Player"]
+        season = row["Season"]
+        
+        mask = (merged_df["Player"] == player) & (merged_df["Season"] == season)
+        merged_df.loc[mask, "AllNBA"] = row["Team"]
+
+
+    merged_df.to_csv(f"data/advanced_stats.csv", index=False)
+    
+    
+
+basketball_ref()

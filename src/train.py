@@ -3,223 +3,182 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from tqdm import tqdm
 import numpy as np
+import json
+
 
 # Models
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.svm import SVC
+from sklearn.ensemble import GradientBoostingClassifier, AdaBoostClassifier
+from xgboost import XGBClassifier
+from lightgbm import LGBMClassifier
 
 # Handy for training
 from sklearn.model_selection import GridSearchCV
-from sklearn.model_selection import train_test_split
 from sklearn.utils import resample
+from sklearn.feature_selection import RFE
+from sklearn.metrics import classification_report
+from sklearn.utils import class_weight
+from sklearn.metrics import make_scorer
 
-# Metrics
-from sklearn.metrics import classification_report, accuracy_score, confusion_matrix, ConfusionMatrixDisplay
+def custom_score_exclude_class_0(y_true, y_pred):
+    from sklearn.metrics import f1_score
+    return f1_score(y_true, y_pred, labels=[1, 2, 3], average='weighted')
 
-def normalize_season(season_str):
-    if '-' in season_str:
-        return int(season_str[:4])
-    return int(season_str)
+data = pd.read_csv("data/advanced_stats.csv")
 
-def encode_five_number(five_str):
-    return int(five_str[0])
+X = data.drop(columns=["AllNBA"])
+y = data["AllNBA"]
 
-def get_top_5_predictions(model, X_input, player_names, seasons):
-    # Predict probabilities
-    probabilities = model.predict_proba(X_input)
+X.fillna(0, inplace=True)
 
-    # Get the most likely class and the associated probability
-    top_classes = np.argmax(probabilities, axis=1)
-    top_probs = np.max(probabilities, axis=1)
+X_train = X[X["Season"] < 2023].copy()
+X_test = X[X["Season"] == 2023].copy()
+y_train = y[X["Season"] < 2023].copy()
+y_test = y[X["Season"] == 2023].copy()
+X_train.drop(columns=["Season", "Player"], inplace=True)
+X_test.drop(columns=["Season", "Player"], inplace=True)
 
-    # Combine into dataframe
-    df = pd.DataFrame({
-        "Player": player_names.values,
-        "Season": seasons.values,
-        "PredictedClass": top_classes,
-        "Probability": top_probs
-    })
+weights = class_weight.compute_class_weight(
+    class_weight="balanced",
+    classes=np.unique(y_train),
+    y=y_train
+)
 
-    # For each class, select top 5 most confident predictions (no duplicates across classes)
-    top_players_by_class = {}
-    for class_id in sorted(df["PredictedClass"].unique()):
-        top_players = df[df["PredictedClass"] == class_id].sort_values(by="Probability", ascending=False).head(5)
-        top_players_by_class[class_id] = list(zip(top_players["Player"], top_players["Season"], top_players["Probability"]))
-
-    return top_players_by_class
-
-# Read CSV
-X = pd.read_csv("data/nba_bulk_season_stats_total_1946_2024.csv")
-Y = pd.read_csv("data/reshaped_nba_players_with_position.csv")
-
-# Delete all empty rows
-Y.dropna(how="all", inplace=True) 
-
-# Initialize columns with All NBA stat
-X["AllNBA"] = 0
-X = X[X["GP"] > 50]
-
-# Convert string data to int data except Player name because dropped later
-X["SEASON"] = X["SEASON"].apply(normalize_season)
-Y["Season"] = Y["Season"].apply(normalize_season)
-Y["Team"] = Y["Team"].apply(encode_five_number)
-
-X["PLAYER_NAME"] = X["PLAYER_NAME"].str.strip()
-Y["Player"] = Y["Player"].str.strip()
-
-X = X[X["PLAYER_NAME"].isin(Y["Player"])]
-
-future_season = 2023
-X_future = X[X["SEASON"] == future_season].copy()
-X = X[X["SEASON"] < future_season]
-
-# Encode if player got the award
-for i, row in Y.iterrows():
-    player = row["Player"]
-    season = row["Season"]
-    
-    mask = (X["PLAYER_NAME"] == player) & (X["SEASON"] == season)
-    X.loc[mask, "AllNBA"] = row["Team"]
-
-# Now, perform the train-test split BEFORE getting player names and seasons
-Y = X["AllNBA"]
-X.drop(columns=["AllNBA"], inplace=True)
-X_future.drop(columns=["AllNBA"], inplace=True)
-
-X_class_0 = X[Y == 0]  # Class 0 players
-Y_class_0 = Y[Y == 0]
-
-X_non_class_0 = X[Y != 0]  # Non-Class 0 players (Class 1, 2, 3)
-Y_non_class_0 = Y[Y != 0]
-
-# ---------- Downsample Class 0 players to match the size of non-class 0 players ----------
-
-# Resample Class 0 players to match the number of non-class 0 players
-X_class_0_downsampled, Y_class_0_downsampled = resample(X_class_0, Y_class_0,
-                                                         n_samples=int(len(X_non_class_0)/3),  # Match size of non-class 0
-                                                         random_state=42)  # For reproducibility
-
-# ---------- Recombine the datasets ----------
-
-# Concatenate the non-class 0 and downsampled class 0 datasets
-X_balanced = pd.concat([X_non_class_0, X_class_0_downsampled])
-Y_balanced = pd.concat([Y_non_class_0, Y_class_0_downsampled])
+class_weight_dict = dict(zip(np.unique(y_train), weights))
 
 
-X_train, X_test, Y_train, Y_test = train_test_split(X_balanced, Y_balanced, test_size=0.2, random_state=42)
-
-# Extract player names and seasons after the split to ensure they are aligned with X_test
-X_future_player_names = X_future["PLAYER_NAME"]
-X_future_season = X_future["SEASON"]
-
-
-# Drop unnecessary columns
-info_to_drop = ["PLAYER_NAME", "NICKNAME", "TEAM_ABBREVIATION", "PLAYER_ID", "TEAM_ID", "SEASON"]
-
-X_train.drop(columns=info_to_drop, inplace=True)
-X_test.drop(columns=info_to_drop, inplace=True)
-X_future.drop(columns=info_to_drop, inplace=True)
-
-stats_to_drop = ["W_PCT", "FT_PCT", "FG_PCT", "FG3_PCT", "NBA_FANTASY_PTS_RANK", "WNBA_FANTASY_PTS_RANK", "NBA_FANTASY_PTS", "WNBA_FANTASY_PTS"]
-
-X_train.drop(columns=stats_to_drop, inplace=True)
-X_test.drop(columns=stats_to_drop, inplace=True)
-X_future.drop(columns=stats_to_drop, inplace=True)
-
-# Y_train = Y_train[X_train.index]
-# Y_test = Y_test[X_test.index]
-
-# Models
+scorer = make_scorer(custom_score_exclude_class_0)
+weights = {0: 1, 1: 10000, 2: 20000, 3: 30000}
 models = {
-    "Logistic Regression": LogisticRegression(max_iter=1000, class_weight={0: 1, 1: 200, 2: 300, 3: 400}),
-    "Random Forest": RandomForestClassifier(class_weight={0: 1, 1: 200, 2: 300, 3: 400}),
-    # "SVM": SVC(class_weight={0: 1, 1: 200, 2: 300, 3: 400})
+    "Logistic Regression": LogisticRegression(
+        max_iter=1000, class_weight=weights, random_state=42
+    ),
+    "Random Forest": RandomForestClassifier(
+        class_weight=weights, random_state=42
+    ),
+    "SVM": SVC(
+        class_weight=weights, probability=True, random_state=42
+    ),
+    "Gradient Boosting": GradientBoostingClassifier(random_state=42),
+    "AdaBoost": AdaBoostClassifier(random_state=42),
+    "XGBoost": XGBClassifier(
+        use_label_encoder=False,
+        eval_metric="mlogloss",
+        random_state=42
+    ),
+    "LightGBM": LGBMClassifier(random_state=42)
 }
 
 param_grids = {
-    'Logistic Regression': {
-        'C': [0.1, 1, 10],  # Regularization strength
-        'solver': ['lbfgs', 'liblinear']  # Optimizer choices
+    "Logistic Regression": {
+        "C": [0.1, 1, 10],
+        "solver": ["lbfgs", "liblinear"]
     },
-    'Random Forest': {
-        'n_estimators': [50, 100, 200],  # Number of trees in the forest
-        'max_depth': [None, 10, 20],  # Depth of each tree
-        'min_samples_split': [2, 5, 10]
+    "Random Forest": {
+        "n_estimators": [50, 100, 200],
+        "max_depth": [None, 10, 20],
+        "min_samples_split": [2, 5, 10]
     },
-    'SVM': {
-        'C': [0.1, 1, 10],  # Regularization strength
-        'kernel': ['linear', 'rbf'],  # Kernel type
-        'gamma': ['scale', 'auto']  # Kernel coefficient
+    "SVM": {
+        "C": [0.1, 1, 10],
+        "gamma": ["scale"],
+        "kernel": ["rbf", "linear"]
+    },
+    "Gradient Boosting": {
+        "n_estimators": [100, 200],
+        "learning_rate": [0.01, 0.1],
+        "max_depth": [3, 6]
+    },
+    "AdaBoost": {
+        "n_estimators": [50, 100, 200],
+        "learning_rate": [0.5, 1.0, 1.5]
+    },
+    "XGBoost": {
+        "n_estimators": [100, 200],
+        "max_depth": [3, 6],
+        "learning_rate": [0.01, 0.1]
+    },
+    "LightGBM": {
+        "n_estimators": [100, 200],
+        "num_leaves": [31, 64],
+        "learning_rate": [0.01, 0.1]
     }
 }
 
 # Iterate through models for grid search
 for name, model in models.items():
     print(f"\n{name} - Grid Search Results:")
+    # model = RandomForestClassifier(n_estimators=100, random_state=42, class_weight={1: 100, 2: 200, 3: 300, 0: 1})
 
-    # Initialize GridSearchCV with the model and its parameter grid
-    grid_search = GridSearchCV(estimator=model, param_grid=param_grids[name], cv=5, n_jobs=-1, verbose=2)
+    grid_search = GridSearchCV(estimator=model, param_grid=param_grids[name], scoring=scorer, cv=5, n_jobs=-1, verbose=2)
 
-    # Fit the model using GridSearchCV
-    grid_search.fit(X_train, Y_train)
+    grid_search.fit(X_train, y_train)
 
     # Get the best model after grid search
     best_model = grid_search.best_estimator_
 
-    # Print the best parameters and best score
-    print(f"Best Parameters: {grid_search.best_params_}")
-    print(f"Best Cross-Validation Score: {grid_search.best_score_}")
+    y_pred = best_model.predict(X_test)
+    y_pred_proba = best_model.predict_proba(X_test)
+    y_pred_proba_df = pd.DataFrame(y_pred_proba, columns=["0", "1", "2", "3"])
 
-    # Make predictions using the best model
-    predictions = best_model.predict(X_test)
+    X_test_players = X[X["Season"] == 2023]["Player"].values
+    y_pred_proba_df.index = X_test_players
 
-    # Print accuracy and classification report
-    print(f"\n{name} - Best Model Results:")
-    print("Accuracy:", accuracy_score(Y_test, predictions))
-    print(classification_report(Y_test, predictions))
+    # # Ensure column names are strings
+    y_pred_proba_df.columns = y_pred_proba_df.columns.astype(str)
 
-    # Get the top 5 predictions for each class (0, 1, 2, 3)
-    # top_players = get_top_5_predictions(best_model, X_test, Y_test, X_test_player_names, X_test_season)
+    # Step 1: First Team - top 5 from class "1"
+    first_team = y_pred_proba_df.sort_values("1", ascending=False).head(5)
+    remaining_df = y_pred_proba_df.drop(index=first_team.index)
 
-    # for class_id, players in top_players.items():
-    #     print(f"\nTop 5 Players Predicted for Class {class_id}:")
-    #     for player, season, prob in players:
-    #         print(f"Player: {player}, Season: {season}, Probability: {prob:.4f}")
-    top_players = get_top_5_predictions(best_model, X_future, X_future_player_names, X_future_season)
-    for class_id, players in top_players.items():
-        print(f"\nTop 5 Players Predicted for Class {class_id}:")
-        for player, season, prob in players:
-            print(f"Player: {player}, Season: {season}, Probability: {prob:.4f}")
-    # Generate confusion matrix
-    cm = confusion_matrix(Y_test, predictions)
+    # Step 2: Second Team - top 5 from class "2", excluding First Team
+    second_team = remaining_df.sort_values("2", ascending=False).head(5)
+    remaining_df = remaining_df.drop(index=second_team.index)
 
-    # Plot the confusion matrix
-    disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=best_model.classes_)
-    disp.plot(cmap="Blues")
+    # Step 3: Third Team - top 5 from class "3", excluding above
+    third_team = remaining_df.sort_values("3", ascending=False).head(5)
+
+    # Build final JSON object
+    nba_teams = {
+        "first all-nba team": first_team.index.tolist(),
+        "second all-nba team": second_team.index.tolist(),
+        "third all-nba team": third_team.index.tolist()
+    }
     
-    # Optional: customize plot
-    plt.title(f"{name} Confusion Matrix (Best Model)")
-    plt.xlabel("Predicted Label")
-    plt.ylabel("True Label")
-    plt.show()
-    # Feature importances from Random Forest
-    if name == "Random Forest":
-        importances = best_model.feature_importances_
-        feature_names = X_train.columns
-        feature_importance_df = pd.DataFrame({
-            "Feature": feature_names,
-            "Importance": importances
-        }).sort_values(by="Importance", ascending=False)
+    # weights = {
+    #     "0": -0.5,
+    #     "1": 3,
+    #     "2": 2,
+    #     "3": 1
+    # }
 
-        print("\nTop 10 Most Important Features (Random Forest):")
-        print(feature_importance_df.head(10))
+    # # Compute weighted score
+    # weighted_scores = (
+    #     y_pred_proba_df["0"] * weights["0"] +
+    #     y_pred_proba_df["1"] * weights["1"] +
+    #     y_pred_proba_df["2"] * weights["2"] +
+    #     y_pred_proba_df["3"] * weights["3"]
+    # )
 
-        # Optional: plot
-        plt.figure(figsize=(10, 6))
-        plt.barh(feature_importance_df["Feature"].head(15), feature_importance_df["Importance"].head(15))
-        plt.gca().invert_yaxis()
-        plt.xlabel("Importance")
-        plt.title("Top 15 Feature Importances - Random Forest")
-        plt.tight_layout()
-        plt.show()
+    # # Add scores to dataframe
+    # y_pred_proba_df["score"] = weighted_scores
+
+    # # Sort by score
+    # sorted_df = y_pred_proba_df.sort_values("score", ascending=False)
+
+    # # Select top 15 players overall, then split into 3 teams
+    # top_15 = sorted_df.head(15)
+
+    # nba_teams = {
+    #     "first all-nba team": top_15.index[:5].tolist(),
+    #     "second all-nba team": top_15.index[5:10].tolist(),
+    #     "third all-nba team": top_15.index[10:15].tolist()
+    # }
+
+    # Save to JSON file
+    with open(f"results/all_nba_teams_2023_{name.replace(' ', '_').lower()}.json", "w") as f:
+        json.dump(nba_teams, f, indent=2)
+
+    print(classification_report(y_test, y_pred))
