@@ -68,4 +68,15 @@ def get_per_game_stats():
         df_table.to_csv(f"data_per_game/per_game_{i}.csv", index=False, encoding="utf-8-sig")
         print("Saved to: ", f"per_game_{i}.csv")
 
-get_per_game_stats()
+def get_rookies():
+    for i in range(1989, 2026):
+        print(i)
+        url = f"https://www.basketball-reference.com/leagues/NBA_{i}_rookies.html"
+        content = request_data(url=url, sleep_time_sec=4.0, with_comment=False)
+        table = content.find("table", id="rookies")
+        df_table = pd.read_html(str(table))[0]
+        df_table['Season'] = i-1
+        df_table.to_csv(f"data_rookies/rookies_{i}.csv", index=False, encoding="utf-8-sig")
+        print("Saved to: ", f"rookies_{i}.csv")
+
+get_rookies()

@@ -1,0 +1,7 @@
+Filename,Score
+all_nba_teams_2023_gradient_boosting.json,364
+all_nba_teams_2023_xgboost.json,300
+all_nba_teams_2023_random_forest.json,284
+all_nba_teams_2023_logistic_regression.json,252
+all_nba_teams_2023_adaboost.json,268
+all_nba_teams_2023_svm.json,366

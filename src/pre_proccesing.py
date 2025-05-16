@@ -56,6 +56,7 @@ def nba_com():
 def basketball_ref():
     df1 = pd.DataFrame()
     df2 = pd.DataFrame()
+    df3 = pd.DataFrame()
     for i in range(1989, CURRENT_YEAR + 2):
         file = f"data_adv/test_{i}.csv"
         df_table = pd.read_csv(file)
@@ -65,13 +66,36 @@ def basketball_ref():
         df_table = pd.read_csv(file)
         df2 = pd.concat([df2, df_table], ignore_index=True)
 
+        file = f"data_rookies/rookies_{i}.csv"
+        df_table = pd.read_csv(file, header=1)
+        df3 = pd.concat([df3, df_table], ignore_index=True)
+
+    # Rename the 'Unnamed: 30' column to 'Season'
+    df3.rename(columns={"Unnamed: 30": "Season"}, inplace=True)
+
+    # Strip whitespace from player names (if any) and drop missing values
+    df3["Player"] = df3["Player"].str.strip()
+    df3["Season"] = df3["Season"].astype(str).str.strip()
+
+    # Keep only Player and Season
+    df3 = df3[["Player", "Season"]].dropna()
+
+    df3 = df3[df3["Player"] != "Player"]
+
+    # Optional: remove leading/trailing whitespace
+    df3["Player"] = df3["Player"].str.strip()
+
+    # Reset index (cleaner output)
+    df3.reset_index(drop=True, inplace=True)
+
     df1['Player'] = df1['Player'].str.strip()
+    df2['Player'] = df2['Player'].str.strip()
     df2['Player'] = df2['Player'].str.strip()
 
     df1.dropna(subset=["Rk"], inplace=True)
     df2.dropna(subset=["Rk"], inplace=True)
     
-    to_keep_adv = ["Player", "Season", "TS%", "WS/48", "VORP"]
+    to_keep_adv = ["Player", "Season", "TS%", "WS/48", "PER"]
     to_keep_per_game = ["Player", "Season", "Team", "PTS", "TRB", "AST", "STL", "BLK"]
 
     df1 = df1[to_keep_adv]
@@ -82,14 +106,39 @@ def basketball_ref():
     merged_df = merged_df.drop_duplicates(subset=['Player', 'Season'], keep='first')
     merged_df.drop(columns=['Team'], inplace=True)
     merged_df["AllNBA"] = 0
+    merged_df["Rookie"] = 0
 
     y_file = f"data/all_nba_results.csv"
+    y_rookie_file = f"data/all_rookies_players.csv"
+
+    temp2 = pd.read_csv(y_rookie_file)
+    
+    temp2.dropna(how="all", inplace=True)
+
+    all_rookies = []
+
+    for idx, row in temp2.iterrows():
+        season = normalize_season(row['Season'])
+        team = row['Tm']
+
+        for col in row.index:
+            if "Unnamed" in col and pd.notna(row[col]):
+                player = row[col].strip()
+                all_rookies.append({'Season': season, 'Player': player, 'Team': team})
+
+    temp2 = pd.DataFrame(all_rookies)
+
     temp = pd.read_csv(y_file)
 
-    temp.dropna(how="all", inplace=True) 
+    temp.dropna(how="all", inplace=True)
     temp["Season"] = temp["Season"].apply(normalize_season)
     temp["Team"] = temp["Team"].apply(encode_five_number)
     temp["Player"] = temp["Player"].str.strip()
+    
+    temp2["Team"] = temp2["Team"].apply(encode_five_number)
+    temp2["Player"] = temp2["Player"].str.strip()
+
+    df3["Season"] = df3["Season"].apply(normalize_season)
     
     for i, row in temp.iterrows():
         player = row["Player"]
@@ -98,6 +147,20 @@ def basketball_ref():
         mask = (merged_df["Player"] == player) & (merged_df["Season"] == season)
         merged_df.loc[mask, "AllNBA"] = row["Team"]
 
+    for i, row in temp2.iterrows():
+        player = row["Player"]
+        season = row["Season"]
+        mask = (merged_df["Player"] == player) & (merged_df["Season"] == season)
+        merged_df.loc[mask, "AllNBA"] = row["Team"] + 3
+
+    for i, row in df3.iterrows():
+        player = row["Player"].strip()
+        season = int(row["Season"])
+
+        player = row["Player"]
+        season = row["Season"]
+        mask = (merged_df["Player"] == player) & (merged_df["Season"] == season)
+        merged_df.loc[mask, "Rookie"] = 1
 
     merged_df.to_csv(f"data/advanced_stats.csv", index=False)
     

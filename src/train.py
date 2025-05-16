@@ -12,7 +12,6 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.svm import SVC
 from sklearn.ensemble import GradientBoostingClassifier, AdaBoostClassifier
 from xgboost import XGBClassifier
-from lightgbm import LGBMClassifier
 
 # Handy for training
 from sklearn.model_selection import GridSearchCV
@@ -50,7 +49,7 @@ class_weight_dict = dict(zip(np.unique(y_train), weights))
 
 
 scorer = make_scorer(custom_score_exclude_class_0)
-weights = {0: 1, 1: 10000, 2: 20000, 3: 30000}
+weights = {0: 1, 1: 100, 2: 100, 3: 100, 4: 100, 5: 100}
 models = {
     "Logistic Regression": LogisticRegression(
         max_iter=1000, class_weight=weights, random_state=42
@@ -58,17 +57,16 @@ models = {
     "Random Forest": RandomForestClassifier(
         class_weight=weights, random_state=42
     ),
-    "SVM": SVC(
-        class_weight=weights, probability=True, random_state=42
-    ),
+    # "SVM": SVC(
+        # class_weight=weights, probability=True, random_state=42
+    # ),
     "Gradient Boosting": GradientBoostingClassifier(random_state=42),
     "AdaBoost": AdaBoostClassifier(random_state=42),
     "XGBoost": XGBClassifier(
         use_label_encoder=False,
         eval_metric="mlogloss",
         random_state=42
-    ),
-    "LightGBM": LGBMClassifier(random_state=42)
+    )
 }
 
 param_grids = {
@@ -99,11 +97,6 @@ param_grids = {
         "n_estimators": [100, 200],
         "max_depth": [3, 6],
         "learning_rate": [0.01, 0.1]
-    },
-    "LightGBM": {
-        "n_estimators": [100, 200],
-        "num_leaves": [31, 64],
-        "learning_rate": [0.01, 0.1]
     }
 }
 
@@ -121,7 +114,7 @@ for name, model in models.items():
 
     y_pred = best_model.predict(X_test)
     y_pred_proba = best_model.predict_proba(X_test)
-    y_pred_proba_df = pd.DataFrame(y_pred_proba, columns=["0", "1", "2", "3"])
+    y_pred_proba_df = pd.DataFrame(y_pred_proba, columns=["0", "1", "2", "3", "4", "5"])
 
     X_test_players = X[X["Season"] == 2023]["Player"].values
     y_pred_proba_df.index = X_test_players
@@ -139,43 +132,21 @@ for name, model in models.items():
 
     # Step 3: Third Team - top 5 from class "3", excluding above
     third_team = remaining_df.sort_values("3", ascending=False).head(5)
+    remaining_df = remaining_df.drop(index=third_team.index)
 
+    first_rookie_team = y_pred_proba_df.sort_values("4", ascending=False).head(5)
+    remaining_df = y_pred_proba_df.drop(index=first_rookie_team.index)
+
+    second_rookie_team = remaining_df.sort_values("5", ascending=False).head(5)
+    remaining_df = remaining_df.drop(index=second_rookie_team.index)
     # Build final JSON object
     nba_teams = {
         "first all-nba team": first_team.index.tolist(),
         "second all-nba team": second_team.index.tolist(),
-        "third all-nba team": third_team.index.tolist()
+        "third all-nba team": third_team.index.tolist(),
+        "first rookie all-nba team": first_rookie_team.index.tolist(),
+        "second rookie all-nba team": second_rookie_team.index.tolist()
     }
-    
-    # weights = {
-    #     "0": -0.5,
-    #     "1": 3,
-    #     "2": 2,
-    #     "3": 1
-    # }
-
-    # # Compute weighted score
-    # weighted_scores = (
-    #     y_pred_proba_df["0"] * weights["0"] +
-    #     y_pred_proba_df["1"] * weights["1"] +
-    #     y_pred_proba_df["2"] * weights["2"] +
-    #     y_pred_proba_df["3"] * weights["3"]
-    # )
-
-    # # Add scores to dataframe
-    # y_pred_proba_df["score"] = weighted_scores
-
-    # # Sort by score
-    # sorted_df = y_pred_proba_df.sort_values("score", ascending=False)
-
-    # # Select top 15 players overall, then split into 3 teams
-    # top_15 = sorted_df.head(15)
-
-    # nba_teams = {
-    #     "first all-nba team": top_15.index[:5].tolist(),
-    #     "second all-nba team": top_15.index[5:10].tolist(),
-    #     "third all-nba team": top_15.index[10:15].tolist()
-    # }
 
     # Save to JSON file
     with open(f"results/all_nba_teams_2023_{name.replace(' ', '_').lower()}.json", "w") as f:
