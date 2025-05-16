@@ -23,21 +23,62 @@ from sklearn.metrics import make_scorer
 
 def custom_score_exclude_class_0(y_true, y_pred):
     from sklearn.metrics import f1_score
-    return f1_score(y_true, y_pred, labels=[1, 2, 3], average='weighted')
+    return f1_score(y_true, y_pred, labels=[1], average='weighted')
 
 data = pd.read_csv("data/advanced_stats.csv")
 
-X = data.drop(columns=["AllNBA"])
+X = data.drop(columns=["AllNBA", "RookieNBA"])
 y = data["AllNBA"]
+y_rookie = data["RookieNBA"]
 
 X.fillna(0, inplace=True)
 
 X_train = X[X["Season"] < 2023].copy()
 X_test = X[X["Season"] == 2023].copy()
+
+X_train_rookie = X[X["Season"] < 2023].copy()
+X_test_rookie = X[X["Season"] == 2023].copy()
+
 y_train = y[X["Season"] < 2023].copy()
 y_test = y[X["Season"] == 2023].copy()
+
+y_train_rookie = y_rookie[X["Season"] < 2023].copy()
+y_test_rookie = y_rookie[X["Season"] == 2023].copy()
+
 X_train.drop(columns=["Season", "Player"], inplace=True)
 X_test.drop(columns=["Season", "Player"], inplace=True)
+
+X_train_rookie.drop(columns=["Season", "Player"], inplace=True)
+X_test_rookie.drop(columns=["Season", "Player"], inplace=True)
+
+X_class_0 = X_train[y_train == 0]  # Class 0 players
+Y_class_0 = y_train[y_train == 0]
+
+X_non_class_0 = X_train[y_train != 0]  # Non-Class 0 players (Class 1, 2, 3)
+Y_non_class_0 = y_train[y_train != 0]
+
+# ---------- Downsample Class 0 players to match the size of non-class 0 players ----------
+
+# Resample Class 0 players to match the number of non-class 0 players
+X_class_0_downsampled, Y_class_0_downsampled = resample(X_class_0, Y_class_0,
+                                                         n_samples=int(len(X_non_class_0)/2),  # Match size of non-class 0
+                                                         random_state=42) 
+
+X_train = pd.concat([X_non_class_0, X_class_0_downsampled])
+y_train = pd.concat([Y_non_class_0, Y_class_0_downsampled])
+
+X_class_0 = X_train_rookie[y_train_rookie == 0]  # Class 0 players
+Y_class_0 = y_train_rookie[y_train_rookie == 0]
+
+X_non_class_0 = X_train_rookie[y_train_rookie != 0]  # Non-Class 0 players (Class 1, 2, 3)
+Y_non_class_0 = y_train_rookie[y_train_rookie != 0]
+
+X_class_0_downsampled, Y_class_0_downsampled = resample(X_class_0, Y_class_0,
+                                                         n_samples=int(len(X_non_class_0)/2),  # Match size of non-class 0
+                                                         random_state=42) 
+
+X_train_rookie = pd.concat([X_non_class_0, X_class_0_downsampled])
+y_train_rookie = pd.concat([Y_non_class_0, Y_class_0_downsampled])
 
 weights = class_weight.compute_class_weight(
     class_weight="balanced",
@@ -49,10 +90,10 @@ class_weight_dict = dict(zip(np.unique(y_train), weights))
 
 
 scorer = make_scorer(custom_score_exclude_class_0)
-weights = {0: 1, 1: 100, 2: 100, 3: 100, 4: 100, 5: 100}
+weights = {0: 1, 1: 10}
 models = {
     "Logistic Regression": LogisticRegression(
-        max_iter=1000, class_weight=weights, random_state=42
+        max_iter=5000, class_weight=weights, random_state=42
     ),
     "Random Forest": RandomForestClassifier(
         class_weight=weights, random_state=42
@@ -106,46 +147,44 @@ for name, model in models.items():
     # model = RandomForestClassifier(n_estimators=100, random_state=42, class_weight={1: 100, 2: 200, 3: 300, 0: 1})
 
     grid_search = GridSearchCV(estimator=model, param_grid=param_grids[name], scoring=scorer, cv=5, n_jobs=-1, verbose=2)
+    grid_search_rookie = GridSearchCV(estimator=model, param_grid=param_grids[name], scoring=scorer, cv=5, n_jobs=-1, verbose=2)
 
     grid_search.fit(X_train, y_train)
 
-    # Get the best model after grid search
     best_model = grid_search.best_estimator_
 
+    grid_search_rookie.fit(X_train_rookie, y_train_rookie)
+    # Get the best model after grid search
+
+    best_model_rookie = grid_search_rookie.best_estimator_
+
     y_pred = best_model.predict(X_test)
+    y_pred_rookie = best_model_rookie.predict(X_test_rookie)
     y_pred_proba = best_model.predict_proba(X_test)
-    y_pred_proba_df = pd.DataFrame(y_pred_proba, columns=["0", "1", "2", "3", "4", "5"])
+    y_pred_proba_rookie = best_model_rookie.predict_proba(X_test_rookie)
+    y_pred_proba_df = pd.DataFrame(y_pred_proba, columns=["0", "1"])
+    y_pred_proba_rookie_df = pd.DataFrame(y_pred_proba_rookie, columns=["0", "1"])
 
     X_test_players = X[X["Season"] == 2023]["Player"].values
     y_pred_proba_df.index = X_test_players
+    y_pred_proba_rookie_df.index = X_test_players
 
     # # Ensure column names are strings
     y_pred_proba_df.columns = y_pred_proba_df.columns.astype(str)
+    y_pred_proba_rookie_df.columns = y_pred_proba_rookie_df.columns.astype(str)
 
     # Step 1: First Team - top 5 from class "1"
-    first_team = y_pred_proba_df.sort_values("1", ascending=False).head(5)
+    first_team = y_pred_proba_df.sort_values("1", ascending=False).head(15)
     remaining_df = y_pred_proba_df.drop(index=first_team.index)
 
-    # Step 2: Second Team - top 5 from class "2", excluding First Team
-    second_team = remaining_df.sort_values("2", ascending=False).head(5)
-    remaining_df = remaining_df.drop(index=second_team.index)
-
-    # Step 3: Third Team - top 5 from class "3", excluding above
-    third_team = remaining_df.sort_values("3", ascending=False).head(5)
-    remaining_df = remaining_df.drop(index=third_team.index)
-
-    first_rookie_team = y_pred_proba_df.sort_values("4", ascending=False).head(5)
-    remaining_df = y_pred_proba_df.drop(index=first_rookie_team.index)
-
-    second_rookie_team = remaining_df.sort_values("5", ascending=False).head(5)
-    remaining_df = remaining_df.drop(index=second_rookie_team.index)
+    rookie_team = y_pred_proba_rookie_df.sort_values("1", ascending=False).head(10)
     # Build final JSON object
     nba_teams = {
-        "first all-nba team": first_team.index.tolist(),
-        "second all-nba team": second_team.index.tolist(),
-        "third all-nba team": third_team.index.tolist(),
-        "first rookie all-nba team": first_rookie_team.index.tolist(),
-        "second rookie all-nba team": second_rookie_team.index.tolist()
+        "first all-nba team": first_team.index.tolist()[0:5],
+        "second all-nba team": first_team.index.tolist()[5:10],
+        "third all-nba team": first_team.index.tolist()[10:15],
+        "first rookie all-nba team": rookie_team.index.tolist()[0:5],
+        "second rookie all-nba team": rookie_team.index.tolist()[5:10]
     }
 
     # Save to JSON file
@@ -153,3 +192,4 @@ for name, model in models.items():
         json.dump(nba_teams, f, indent=2)
 
     print(classification_report(y_test, y_pred))
+    print(classification_report(y_test_rookie, y_pred_rookie))

@@ -106,6 +106,7 @@ def basketball_ref():
     merged_df = merged_df.drop_duplicates(subset=['Player', 'Season'], keep='first')
     merged_df.drop(columns=['Team'], inplace=True)
     merged_df["AllNBA"] = 0
+    merged_df["RookieNBA"] = 0
     merged_df["Rookie"] = 0
 
     y_file = f"data/all_nba_results.csv"
@@ -145,13 +146,13 @@ def basketball_ref():
         season = row["Season"]
         
         mask = (merged_df["Player"] == player) & (merged_df["Season"] == season)
-        merged_df.loc[mask, "AllNBA"] = row["Team"]
+        merged_df.loc[mask, "AllNBA"] = 1
 
     for i, row in temp2.iterrows():
         player = row["Player"]
         season = row["Season"]
         mask = (merged_df["Player"] == player) & (merged_df["Season"] == season)
-        merged_df.loc[mask, "AllNBA"] = row["Team"] + 3
+        merged_df.loc[mask, "RookieNBA"] = 1
 
     for i, row in df3.iterrows():
         player = row["Player"].strip()
