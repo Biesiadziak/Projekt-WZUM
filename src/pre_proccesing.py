@@ -95,7 +95,7 @@ def basketball_ref():
     df1.dropna(subset=["Rk"], inplace=True)
     df2.dropna(subset=["Rk"], inplace=True)
     
-    to_keep_adv = ["Player", "Season", "TS%", "WS/48", "PER"]
+    to_keep_adv = ["Player", "Season", "WS/48", "PER"]
     to_keep_per_game = ["Player", "Season", "Team", "PTS", "TRB", "AST", "STL", "BLK"]
 
     df1 = df1[to_keep_adv]
@@ -105,8 +105,13 @@ def basketball_ref():
 
     merged_df = merged_df.drop_duplicates(subset=['Player', 'Season'], keep='first')
     merged_df.drop(columns=['Team'], inplace=True)
+    merged_df_rookie = merged_df.copy()
     merged_df["AllNBA"] = 0
+    merged_df["Class"] = 0
     merged_df["Rookie"] = 0
+    merged_df_rookie["RookieNBA"] = 0
+    merged_df_rookie["ClassRookie"] = 0
+    merged_df_rookie["Rookie"] = 0
 
     y_file = f"data/all_nba_results.csv"
     y_rookie_file = f"data/all_rookies_players.csv"
@@ -145,13 +150,15 @@ def basketball_ref():
         season = row["Season"]
         
         mask = (merged_df["Player"] == player) & (merged_df["Season"] == season)
-        merged_df.loc[mask, "AllNBA"] = row["Team"]
+        merged_df.loc[mask, "AllNBA"] = 1
+        merged_df.loc[mask, "Class"] = row["Team"]
 
     for i, row in temp2.iterrows():
         player = row["Player"]
         season = row["Season"]
-        mask = (merged_df["Player"] == player) & (merged_df["Season"] == season)
-        merged_df.loc[mask, "AllNBA"] = row["Team"] + 3
+        mask = (merged_df_rookie["Player"] == player) & (merged_df_rookie["Season"] == season)
+        merged_df_rookie.loc[mask, "RookieNBA"] = 1
+        merged_df_rookie.loc[mask, "ClassRookie"] = row["Team"]
 
     for i, row in df3.iterrows():
         player = row["Player"].strip()
@@ -159,10 +166,18 @@ def basketball_ref():
 
         player = row["Player"]
         season = row["Season"]
-        mask = (merged_df["Player"] == player) & (merged_df["Season"] == season)
+        mask = (merged_df_rookie["Player"] == player) & (merged_df_rookie["Season"] == season)
         merged_df.loc[mask, "Rookie"] = 1
+        merged_df_rookie.loc[mask, "Rookie"] = 1
 
-    merged_df.to_csv(f"data/advanced_stats.csv", index=False)
+    # Drop all rookies from merged_df (keep only non-rookies)
+    merged_df = merged_df[merged_df["Rookie"] == 0]
+    merged_df.drop(columns=["Rookie"], inplace=True)
+    # Drop all non-rookies from merged_df_rookie (keep only rookies)
+    merged_df_rookie = merged_df_rookie[merged_df_rookie["Rookie"] == 1]
+
+    merged_df.to_csv(f"data/NBA_stats.csv", index=False)
+    merged_df_rookie.to_csv(f"data/rookies_stats.csv", index=False)
     
     
 
