@@ -1,37 +1,37 @@
 {
   "first all-nba team": [
-    "Nikola Jokić",
+    "Shai Gilgeous-Alexander",
+    "Nikola Joki\u0107",
     "Giannis Antetokounmpo",
     "Jayson Tatum",
-    "Donovan Mitchell",
-    "Shai Gilgeous-Alexander"
+    "Anthony Edwards"
   ],
   "second all-nba team": [
-    "Stephen Curry",
     "LeBron James",
-    "Evan Mobley",
-    "Anthony Edwards",
-    "Jalen Brunson"
+    "Karl-Anthony Towns",
+    "Stephen Curry",
+    "James Harden",
+    "Cade Cunningham"
   ],
   "third all-nba team": [
     "Tyrese Haliburton",
-    "Karl-Anthony Towns",
-    "James Harden",
-    "Cade Cunningham",
+    "Ivica Zubac",
+    "Jarrett Allen",
+    "Evan Mobley",
     "Jalen Williams"
   ],
   "first rookie all-nba team": [
     "Stephon Castle",
-    "Zaccharie Risacher",
+    "Tolu Smith",
     "Alex Sarr",
-    "Zach Edey",
-    "Jaylen Wells"
+    "Jared McCain",
+    "Zach Edey"
   ],
   "second rookie all-nba team": [
+    "Kyle Filipowski",
     "Yves Missi",
+    "Donovan Clingan",
     "Kel'el Ware",
-    "Matas Buzelis",
-    "Bub Carrington",
-    "Donovan Clingan"
+    "Zaccharie Risacher"
   ]
 }

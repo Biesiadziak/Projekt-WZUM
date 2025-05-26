@@ -4,7 +4,7 @@ import time as t
 import numpy as np
 import pandas as pd
 
-CURRENT_YEAR = 2023
+CURRENT_YEAR = 2024
 
 def normalize_season(season_str):
     if '-' in season_str:
@@ -95,8 +95,8 @@ def basketball_ref():
     df1.dropna(subset=["Rk"], inplace=True)
     df2.dropna(subset=["Rk"], inplace=True)
     
-    to_keep_adv = ["Player", "Season", "WS/48", "PER"]
-    to_keep_per_game = ["Player", "Season", "Team", "PTS", "TRB", "AST", "STL", "BLK"]
+    to_keep_adv = ["Player", "Season", "VORP", "DWS", "PER", "G"]
+    to_keep_per_game = ["Player", "Season", "Team", "FTA", "TOV", "PTS", "DRB"]
 
     df1 = df1[to_keep_adv]
     df2 = df2[to_keep_per_game]
