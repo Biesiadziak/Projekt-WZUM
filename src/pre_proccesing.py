@@ -95,8 +95,17 @@ def basketball_ref():
     df1.dropna(subset=["Rk"], inplace=True)
     df2.dropna(subset=["Rk"], inplace=True)
     
-    to_keep_adv = ["Player", "Season", "VORP", "DWS", "PER", "G"]
-    to_keep_per_game = ["Player", "Season", "Team", "FTA", "TOV", "PTS", "DRB"]
+    # Common
+    to_keep_adv = ["Player", "Season"]
+    to_keep_per_game = ["Player", "Season", "Team", "PTS", "DRB", "TOV"]
+    
+    # AllNBA
+    to_keep_adv += ["VORP", "DWS", "PER", "G"]
+    to_keep_per_game += ["FTA", "PTS"]
+    
+    # Rookie
+    to_keep_adv += ["GS", "MP", "WS"]
+    to_keep_per_game += ["2P", "FT"]
 
     df1 = df1[to_keep_adv]
     df2 = df2[to_keep_per_game]
