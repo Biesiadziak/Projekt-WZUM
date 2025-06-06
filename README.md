@@ -19,6 +19,10 @@ W przypadku graczy debiutujących uwzględniono wyłącznie tych z formalnym sta
 
 **Filtracja:** gracze z mniej niż 64 meczami w sezonie zostali usunięci.
 
+![Schemat działania klasyfikatora](Corr_map.png)
+
+![Schemat działania klasyfikatora](corr_map_rookie.png)
+
 **Finalne cechy:**
 
 - **Wspólne:** `PTS`, `DRB`, `TOV` (z `per_game`)
@@ -35,7 +39,7 @@ Wizualizacje korelacji dostępne w repozytorium:
 
 Zaprojektowano **klasyfikator warstwowy**. Dane przechodzą przez dwa modele filtrujące, które wybierają top 30 zawodników sezonu. Następnie dane trafiają do głównego klasyfikatora.
 
-![Schemat działania klasyfikatora](schemat.eps)
+![Schemat działania klasyfikatora](schemat.png)
 
 **Użyte biblioteki modeli:**  
 `scikit-learn`, `catboost`, `xgboost`
